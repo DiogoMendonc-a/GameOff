@@ -10,49 +10,54 @@ public class DungeonGenerator : MonoBehaviour{
 	public int numberOfLevels;
 	public int levelWidth;
 	public int levelHeight;
+	public int maxDepth;
 
+	public int maxRoomSpawnTries;
 	public GameObject[] prefabs;
-	GameObject[] southConnectingPrefabs;
-	GameObject[] eastConnectingPrefabs;
-	GameObject[] westConnectingPrefabs;
-	GameObject[] northConnectingPrefabs;
+	public GameObject[] startingRooms;
 	Dungeon d; //DEBUG
+	
+	List<Rect> boundingBoxes;
+
+	Quaternion[] rotations;
+
+	void Awake() {
+		rotations = new Quaternion[] {
+			Quaternion.Euler(0, 0, 0),
+			Quaternion.Euler(0, 0, 90),
+			Quaternion.Euler(0, 0, 180),
+			Quaternion.Euler(0, 0, -90),
+		};
+	}
+
 	void Start() {
-		PreClassifyRooms();
+		
 		DebugGenerate(); //DEBUG
 	}
 
+	void KillAllChildren() {
+		List<Transform> children = new List<Transform>();
+		for(int i = 0; i < transform.childCount; i++) {
+			children.Add(transform.GetChild(i));
+		}
+		foreach (Transform child in children)
+		{
+			Destroy(child.gameObject);
+		}
+	}	
+
 	void Update() {
 		if(Input.GetKeyDown(KeyCode.G)) { //DEBUG
+			KillAllChildren();
 			DebugGenerate();
 		}	
+
 		DebugDrawLevel(d.GetLevel(0));
 	}
 
 	//DEBUG
 	void DebugGenerate() {
 		d = GenerateDungeon(new System.Random().Next());
-	}
-
-	void PreClassifyRooms() {
-		List<GameObject> sRooms = new List<GameObject>();
-		List<GameObject> eRooms = new List<GameObject>();
-		List<GameObject> wRooms = new List<GameObject>();
-		List<GameObject> nRooms = new List<GameObject>();
-
-		foreach (GameObject room in prefabs)
-		{
-			RoomPrefab type = room.GetComponent<RoomPrefab>();
-			if(type.connectsSouth) sRooms.Add(room);
-			if(type.connectsEast) eRooms.Add(room);
-			if(type.connectsWest) wRooms.Add(room);
-			if(type.connectsNorth) nRooms.Add(room);
-		}
-
-		southConnectingPrefabs = sRooms.ToArray();
-		eastConnectingPrefabs = eRooms.ToArray();
-		westConnectingPrefabs = wRooms.ToArray();
-		northConnectingPrefabs = nRooms.ToArray();
 	}
 
 	public Dungeon GenerateDungeon(int seed) {
@@ -69,9 +74,11 @@ public class DungeonGenerator : MonoBehaviour{
 	public Level GenerateLevel(int seed) {
 		Level level = new Level(seed, levelWidth, levelHeight);
 		System.Random rng = new System.Random(seed);
+		boundingBoxes = new List<Rect>();
 		int x = rng.Next() % levelWidth;
 		int y = rng.Next() % levelHeight;
-		GenerateRoom(rng.Next(), level, x, y, prefabs);
+		GameObject startingRoom = startingRooms[rng.Next() % startingRooms.Length];
+		GenerateRoom(rng.Next(), Vector3.zero, Quaternion.identity, level, startingRoom, 0);
 		return level;
 	}
 
@@ -89,78 +96,50 @@ public class DungeonGenerator : MonoBehaviour{
 		return validRooms.ToArray();
 	}
 
-	public void GenerateRoom(int seed, Level level, int x, int y, GameObject[] possibleRooms,string debug_offset = "") {
+	public bool ValidPlacement(Vector3 displacement, Quaternion rotation, RoomPrefab type) {
+		Rect bb = type.GetBoundingBox(displacement, rotation);
+		foreach (Rect r in boundingBoxes)
+		{
+			if(r.Overlaps(bb)) return false;
+		}
+		return true;
+	}
+
+	void GenerateAtExit(System.Random rng, Level level, GameObject exit, int depth) {
+		Debug.Log("Generating At Exit At " + exit.transform.position + " Depth: " + depth);
+		for(int i = 0; i < maxRoomSpawnTries; i++) {
+			GameObject possibleNeighbour = prefabs[rng.Next() % prefabs.Length];
+			RoomPrefab neighbourType = possibleNeighbour.GetComponent<RoomPrefab>();
+			foreach (Quaternion possibleRotation in rotations)
+			{
+				foreach (GameObject entrance in neighbourType.entrances)
+				{
+					Vector3 displacement = possibleRotation * -entrance.transform.position;
+					displacement += exit.transform.position;
+					if(ValidPlacement(displacement, possibleRotation, neighbourType)) {
+						Debug.Log("		Generating Room " + possibleRotation.eulerAngles + " : " + displacement + " " + neighbourType.GetBoundingBox(displacement, possibleRotation));
+						GenerateRoom(rng.Next(), displacement, possibleRotation, level, possibleNeighbour, depth + 1);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	public void GenerateRoom(int seed, Vector3 position, Quaternion rotation, Level level, GameObject prefab, int depth) {
 		System.Random rng = new System.Random(seed);
-		bool canGoNorth = false;
-		bool canGoWest = false;
-		bool canGoEast = false;
-		bool canGoSouth = false;
+		//GameObject prefab = possibleRooms[rng.Next() % possibleRooms.Length];
+		GameObject newRoom = GameObject.Instantiate(prefab, position, rotation);
+		RoomPrefab type = newRoom.GetComponent<RoomPrefab>();
+		newRoom.transform.parent = this.transform;
+		boundingBoxes.Add(type.GetBoundingBox(position, rotation));
+		if(depth == maxDepth) return;
 
-		if(y > 0) {
-			Room neighbour = level.GetRoom(x, y - 1);
-			if(neighbour != null) {
-				if(neighbour.roomType.connectsSouth) {
-					canGoNorth = true;
-				}
-			}
-			else {
-				canGoNorth = true;
-			}
+		foreach (GameObject exit in type.entrances)
+		{
+			GenerateAtExit(rng, level, exit, depth);
 		}
 
-		if(x > 0) {
-			Room neighbour = level.GetRoom(x - 1, y);
-			if(neighbour != null) {
-				if(neighbour.roomType.connectsEast) {
-					canGoWest = true;
-				}
-			}
-			else {
-				canGoWest = true;
-			}
-		}
-
-		if(x < levelWidth - 1) {
-			Room neighbour = level.GetRoom(x + 1, y);
-			if(neighbour != null) {
-				if(neighbour.roomType.connectsWest) {
-					canGoEast = true;
-				}
-			}
-			else {
-				canGoEast = true;
-			}
-		}
-
-		if(y < levelHeight - 1) {
-			Room neighbour = level.GetRoom(x, y + 1);
-			if(neighbour != null) {
-				if(neighbour.roomType.connectsNorth) {
-					canGoSouth = true;
-				}
-			}
-			else {
-				canGoSouth = true;
-			}
-		}
-
-		GameObject[] validPrefabs = GetPossibleRooms(possibleRooms, canGoNorth, canGoWest, canGoEast, canGoSouth);
-		GameObject prefab = validPrefabs[rng.Next()%validPrefabs.Length];
-		RoomPrefab type = prefab.GetComponent<RoomPrefab>();
-		Room room = new Room(seed, prefab, type);
-		level.AddRoom(room, x, y);
-		if (type.connectsNorth && level.GetRoom(x, y - 1) == null) {
-			GenerateRoom(rng.Next(), level, x, y - 1, southConnectingPrefabs, debug_offset += "-");
-		}
-		if (type.connectsWest && level.GetRoom(x - 1, y) == null) {
-			GenerateRoom(rng.Next(), level, x - 1, y, eastConnectingPrefabs, debug_offset += "-");
-		}
-		if (type.connectsEast && level.GetRoom(x + 1, y) == null) {
-			GenerateRoom(rng.Next(), level, x + 1, y, westConnectingPrefabs, debug_offset += "-");
-		}
-		if (type.connectsSouth && level.GetRoom(x, y + 1) == null) {
-			GenerateRoom(rng.Next(), level, x, y + 1, northConnectingPrefabs, debug_offset += "-");
-		}
 	}
 
 	//DEBUG

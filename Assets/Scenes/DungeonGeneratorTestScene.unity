@@ -158,22 +158,16 @@ MonoBehaviour:
   numberOfLevels: 1
   levelWidth: 5
   levelHeight: 5
+  maxDepth: 3
+  maxRoomSpawnTries: 3
   prefabs:
-  - {fileID: 8712874681362743265, guid: afee59accb64d6748be9cae2ce55b644, type: 3}
-  - {fileID: 8712874681362743265, guid: 6f9b2b59a37b8df4da791892989dbbfc, type: 3}
-  - {fileID: 8712874681362743265, guid: afa0b28d9b04adf49bcf4a0105b5f628, type: 3}
-  - {fileID: 8712874681362743265, guid: 61317b30932609f4cab1e34169e2484b, type: 3}
-  - {fileID: 8712874681362743265, guid: 86b38283e5b55864d87b417569421725, type: 3}
-  - {fileID: 8712874681362743265, guid: e49da97bfe78e01448a6cc860f9e43c7, type: 3}
-  - {fileID: 8712874681362743265, guid: 20cdb03b695af8641bb2289cfc0ee590, type: 3}
-  - {fileID: 8712874681362743265, guid: bbfb696add4906144a032b72a6451781, type: 3}
-  - {fileID: 8712874681362743265, guid: a0cfefc7b1358da469a913946f49a4e8, type: 3}
-  - {fileID: 8712874681362743265, guid: e1bd15a9bf788a345bc0d895fb6e5754, type: 3}
-  - {fileID: 8712874681362743265, guid: f85f9509801706a4bbb251e5ea59de52, type: 3}
-  - {fileID: 8712874681362743265, guid: 8372ac670da111247a6e047fb614bab3, type: 3}
-  - {fileID: 8712874681362743265, guid: d507709a0bf771842bcfaf56d685f058, type: 3}
-  - {fileID: 8712874681362743265, guid: ca05b20bf6b07d84380a18db5967410a, type: 3}
-  - {fileID: 8712874681362743265, guid: ea166e078ee34fd47b2d8b50b9dc67fb, type: 3}
+  - {fileID: 755176377449448021, guid: 7c0d67be67862fb46a179be3ae7f60cc, type: 3}
+  - {fileID: 8324040719812875826, guid: 1d66ea8455080e8489c7e48939795594, type: 3}
+  - {fileID: 4573531375422291504, guid: e8257ba523321b842b62808e93e5c4da, type: 3}
+  - {fileID: 6218845135736962022, guid: e3f42921332723640bb0844c97348238, type: 3}
+  - {fileID: 6127203160129210804, guid: 511ca0b32fa216f43b12a5d2bae275e5, type: 3}
+  startingRooms:
+  - {fileID: 8324040719812875826, guid: 1d66ea8455080e8489c7e48939795594, type: 3}
 --- !u!4 &174739128
 Transform:
   m_ObjectHideFlags: 0
