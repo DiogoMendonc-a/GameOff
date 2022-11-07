@@ -112,11 +112,11 @@ public class DungeonGenerator : MonoBehaviour{
 	}
 
 	void CreateConnection(GameObject exit, GameObject entrance) {
-		exit.GetComponent<SpriteRenderer>().color = Color.blue;
-		entrance.GetComponent<SpriteRenderer>().color = Color.blue;
+//		exit.GetComponent<SpriteRenderer>().color = Color.blue;
+//		entrance.GetComponent<SpriteRenderer>().color = Color.blue;
 
-//		exit.SetActive(false);
-//		entrance.SetActive(false);
+		exit.SetActive(false);
+		entrance.SetActive(false);
 	}
 
 	bool ValidPlacement(Vector3 displacement, Quaternion rotation, RoomPrefab type) {

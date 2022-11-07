@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 public class RoomPrefab : MonoBehaviour {
-	public Vector2 boundingBox;
 	public BoundingBox[] boundingBoxes;
 	public GameObject[] entrances;
 

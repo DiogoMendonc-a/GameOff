@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 91371007535260773}
   - {fileID: 6920112763982322729}
   - {fileID: 7801816823984023456}
-  displacement: {x: 0, y: 0, z: 0}
+  displacement: {x: 0.5000021, y: -1.500006, z: 0}
   rotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
 --- !u!1 &2749177878011335204
 GameObject:
