@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour{
-	public float roomWidth;
-	public float roomHeight;
-	public float roomOffset;
-
 	public int numberOfLevels;
-	public int levelWidth;
-	public int levelHeight;
+
+	public float entranceDeadzone = 0.001f;
 	public int maxDepth;
 
 	public int maxRoomSpawnTries;
 	public GameObject[] prefabs;
 	public GameObject[] startingRooms;
+	public List<GameObject> onceRooms;
+
+	[Range(0,100)]
+	public int onceRoomChance;
+	List<GameObject> onceRoomsRemaining;
+	
+	public GameObject[] bossRooms;
+	List<GameObject> bossRoomsRemaining;
+
 	Dungeon d; //DEBUG
 	
 	List<Rect> boundingBoxes;
@@ -38,11 +43,7 @@ public class DungeonGenerator : MonoBehaviour{
 	void KillAllChildren() {
 		List<Transform> children = new List<Transform>();
 		for(int i = 0; i < transform.childCount; i++) {
-			children.Add(transform.GetChild(i));
-		}
-		foreach (Transform child in children)
-		{
-			Destroy(child.gameObject);
+			Destroy(transform.GetChild(i).gameObject);
 		}
 	}	
 
@@ -51,64 +52,96 @@ public class DungeonGenerator : MonoBehaviour{
 			KillAllChildren();
 			DebugGenerate();
 		}	
-
-		DebugDrawLevel(d.GetLevel(0));
 	}
 
 	//DEBUG
 	void DebugGenerate() {
 		d = GenerateDungeon(new System.Random().Next());
+		GenerateLevel(0);
 	}
 
 	public Dungeon GenerateDungeon(int seed) {
 		Dungeon dungeon = new Dungeon(seed);
 		System.Random rng = new System.Random(seed);
+
+		//initialize lists
+		onceRoomsRemaining = new List<GameObject>(onceRooms);
+		bossRoomsRemaining = new List<GameObject>(bossRooms);
+
+		
 		for (int i = 0; i < numberOfLevels; i++)
 		{
 			int levelSeed = rng.Next();
-			dungeon.AddLevel(GenerateLevel(levelSeed));
+			dungeon.AddLevel(new Level(seed));
 		}
 		return dungeon;
 	}
 
-	public Level GenerateLevel(int seed) {
-		Level level = new Level(seed, levelWidth, levelHeight);
-		System.Random rng = new System.Random(seed);
+	Level GenerateLevel(int levelId) {
+		Level level = d.GetLevel(levelId);
+		System.Random rng = new System.Random(level.levelSeed);
+
 		boundingBoxes = new List<Rect>();
-		int x = rng.Next() % levelWidth;
-		int y = rng.Next() % levelHeight;
+		
 		GameObject startingRoom = startingRooms[rng.Next() % startingRooms.Length];
+		
 		GenerateRoom(rng.Next(), Vector3.zero, Quaternion.identity, level, startingRoom, 0);
+		GenerateBossRoom(level);
+		
+		foreach(RoomPrefab room in level.rooms) {
+			CheckConnections(room, level);
+		}
 		return level;
 	}
 
-	public GameObject[] GetPossibleRooms(GameObject[] pool, bool north, bool west, bool east, bool south) {
-		List<GameObject> validRooms = new List<GameObject>();
-		foreach (GameObject room in pool)
-		{
-			RoomPrefab type = room.GetComponent<RoomPrefab>();
-			if(type.connectsNorth && !north) continue;
-			if(type.connectsWest && !west) continue;
-			if(type.connectsEast && !east) continue;
-			if(type.connectsSouth && !south) continue;
-			validRooms.Add(room);
+	void CheckConnections(RoomPrefab room, Level level) {
+		foreach(RoomPrefab other in level.rooms) {
+			if(other == room) continue;
+			foreach (GameObject exit in room.entrances)
+			{
+				if(!exit.activeSelf) continue;
+				foreach (GameObject entrance in other.entrances)
+				{
+					if(!entrance.activeSelf) continue;
+					if((exit.transform.position - entrance.transform.position).sqrMagnitude < entranceDeadzone) {
+						CreateConnection(exit, entrance);
+					}
+				}
+			}
 		}
-		return validRooms.ToArray();
 	}
 
-	public bool ValidPlacement(Vector3 displacement, Quaternion rotation, RoomPrefab type) {
-		Rect bb = type.GetBoundingBox(displacement, rotation);
+	void CreateConnection(GameObject exit, GameObject entrance) {
+		exit.GetComponent<SpriteRenderer>().color = Color.blue;
+		entrance.GetComponent<SpriteRenderer>().color = Color.blue;
+
+//		exit.SetActive(false);
+//		entrance.SetActive(false);
+	}
+
+	bool ValidPlacement(Vector3 displacement, Quaternion rotation, RoomPrefab type) {
+		Rect[] bbs = type.GetBoundingBoxes(displacement, rotation);
 		foreach (Rect r in boundingBoxes)
 		{
-			if(r.Overlaps(bb)) return false;
+			foreach (Rect bb in bbs)
+			{
+				if(r.Overlaps(bb)) return false;
+			}
 		}
 		return true;
 	}
 
+	GameObject GetRoom(System.Random rng) {
+		int value = rng.Next()%100;
+		if(value < onceRoomChance && onceRoomsRemaining.Count > 0) {
+			return onceRoomsRemaining[rng.Next()%onceRoomsRemaining.Count];
+		}
+		return prefabs[rng.Next() % prefabs.Length];
+	}
+
 	void GenerateAtExit(System.Random rng, Level level, GameObject exit, int depth) {
-		Debug.Log("Generating At Exit At " + exit.transform.position + " Depth: " + depth);
 		for(int i = 0; i < maxRoomSpawnTries; i++) {
-			GameObject possibleNeighbour = prefabs[rng.Next() % prefabs.Length];
+			GameObject possibleNeighbour = GetRoom(rng);
 			RoomPrefab neighbourType = possibleNeighbour.GetComponent<RoomPrefab>();
 			foreach (Quaternion possibleRotation in rotations)
 			{
@@ -117,7 +150,6 @@ public class DungeonGenerator : MonoBehaviour{
 					Vector3 displacement = possibleRotation * -entrance.transform.position;
 					displacement += exit.transform.position;
 					if(ValidPlacement(displacement, possibleRotation, neighbourType)) {
-						Debug.Log("		Generating Room " + possibleRotation.eulerAngles + " : " + displacement + " " + neighbourType.GetBoundingBox(displacement, possibleRotation));
 						GenerateRoom(rng.Next(), displacement, possibleRotation, level, possibleNeighbour, depth + 1);
 						return;
 					}
@@ -126,37 +158,50 @@ public class DungeonGenerator : MonoBehaviour{
 		}
 	}
 
-	public void GenerateRoom(int seed, Vector3 position, Quaternion rotation, Level level, GameObject prefab, int depth) {
+	void GenerateRoom(int seed, Vector3 position, Quaternion rotation, Level level, GameObject prefab, int depth) {
 		System.Random rng = new System.Random(seed);
 		//GameObject prefab = possibleRooms[rng.Next() % possibleRooms.Length];
 		GameObject newRoom = GameObject.Instantiate(prefab, position, rotation);
 		RoomPrefab type = newRoom.GetComponent<RoomPrefab>();
+		level.AddRoom(type);
 		newRoom.transform.parent = this.transform;
-		boundingBoxes.Add(type.GetBoundingBox(position, rotation));
+		boundingBoxes.AddRange(type.GetBoundingBoxes(position, rotation));
+		if(onceRoomsRemaining.Contains(prefab)) onceRoomsRemaining.Remove(prefab);
 		if(depth == maxDepth) return;
 
 		foreach (GameObject exit in type.entrances)
 		{
 			GenerateAtExit(rng, level, exit, depth);
 		}
-
 	}
 
-	//DEBUG
-	public void DebugDrawLevel(Level level) {
-		float w = roomWidth * levelWidth + (levelWidth + 1) * roomOffset;
-		float h = roomHeight * levelHeight + (levelHeight + 1) * roomOffset;
-		Debug.DrawLine(new Vector3(0, h, 0), new Vector3(w, h, 0), Color.black);
-		Debug.DrawLine(new Vector3(0, 0, 0), new Vector3(w, 0, 0), Color.black);
-		Debug.DrawLine(new Vector3(0, 0, 0), new Vector3(0, h, 0), Color.black);
-		Debug.DrawLine(new Vector3(w, 0, 0), new Vector3(w, h, 0), Color.black);
-		
-		for (int i = 0; i < levelWidth; i++)
-		{
-			for (int j = 0; j < levelHeight; j++)
+	void GenerateBossRoom(Level level) {
+		System.Random rng = new System.Random(level.levelSeed);
+		if(bossRoomsRemaining.Count == 0) {
+			Debug.LogWarning("No Boss Rooms Remain to Be Placed! Reseting List");
+			bossRoomsRemaining = new List<GameObject>(bossRooms);
+		}
+		GameObject bossRoom = bossRoomsRemaining[rng.Next()%bossRoomsRemaining.Count];
+		RoomPrefab bossRoomType = bossRoom.GetComponent<RoomPrefab>();
+		foreach(GameObject entrance in bossRoomType.entrances) {
+			foreach (RoomPrefab room in level.rooms)
 			{
-				Room room = level.GetRoom(i, j);
-				if(room != null) room.DebugDraw(i, j, roomOffset, roomWidth, roomHeight);
+				foreach (GameObject exit in room.entrances)
+				{
+					foreach (Quaternion possibleRotation in rotations) {
+						Vector3 displacement = possibleRotation * -entrance.transform.position;
+						displacement += exit.transform.position;
+						if(ValidPlacement(displacement, possibleRotation, bossRoomType)) {
+							GameObject newRoom = GameObject.Instantiate(bossRoom, displacement, possibleRotation);
+							RoomPrefab type = newRoom.GetComponent<RoomPrefab>();
+							level.AddRoom(type);
+							newRoom.transform.parent = this.transform;
+							boundingBoxes.AddRange(type.GetBoundingBoxes(displacement, possibleRotation));
+							bossRoomsRemaining.Remove(bossRoom);
+							return;
+						}
+					}
+				}
 			}
 		}
 	}
