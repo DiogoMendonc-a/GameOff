@@ -160,6 +160,9 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   - {fileID: 7467480202973189232, guid: c511375163da3ec4b8484bb7d312e794, type: 3}
+  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
+  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
+  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
   startingRooms:
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   onceRooms:
