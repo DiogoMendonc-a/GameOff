@@ -94,6 +94,16 @@ public class DungeonGenerator : MonoBehaviour{
 		return level;
 	}
 
+	Quaternion[] GetRandomizedRotations(System.Random rng) {
+		List<Quaternion> remainingRotations = new List<Quaternion>(rotations);
+		List<Quaternion> pickedRotations = new List<Quaternion>();
+		for(int i = 0; i < 4; i++) {
+			Quaternion picked = remainingRotations[rng.Next()%remainingRotations.Count];
+			pickedRotations.Add(picked);
+			remainingRotations.Remove(picked);
+		}
+		return pickedRotations.ToArray();
+	}
 	void CheckConnections(RoomPrefab room, Level level) {
 		foreach(RoomPrefab other in level.rooms) {
 			if(other == room) continue;
@@ -143,7 +153,7 @@ public class DungeonGenerator : MonoBehaviour{
 		for(int i = 0; i < maxRoomSpawnTries; i++) {
 			GameObject possibleNeighbour = GetRoom(rng);
 			RoomPrefab neighbourType = possibleNeighbour.GetComponent<RoomPrefab>();
-			foreach (Quaternion possibleRotation in rotations)
+			foreach (Quaternion possibleRotation in GetRandomizedRotations(rng))
 			{
 				foreach (GameObject entrance in neighbourType.entrances)
 				{
@@ -157,6 +167,7 @@ public class DungeonGenerator : MonoBehaviour{
 			}
 		}
 	}
+
 
 	void GenerateRoom(int seed, Vector3 position, Quaternion rotation, Level level, GameObject prefab, int depth) {
 		System.Random rng = new System.Random(seed);
@@ -188,7 +199,7 @@ public class DungeonGenerator : MonoBehaviour{
 			{
 				foreach (GameObject exit in room.entrances)
 				{
-					foreach (Quaternion possibleRotation in rotations) {
+					foreach (Quaternion possibleRotation in GetRandomizedRotations(rng)) {
 						Vector3 displacement = possibleRotation * -entrance.transform.position;
 						displacement += exit.transform.position;
 						if(ValidPlacement(displacement, possibleRotation, bossRoomType)) {

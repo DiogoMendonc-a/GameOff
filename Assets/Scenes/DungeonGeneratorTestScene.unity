@@ -160,16 +160,14 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   - {fileID: 7467480202973189232, guid: c511375163da3ec4b8484bb7d312e794, type: 3}
-  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
-  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
-  - {fileID: 7467480202973189232, guid: f04f4159b3ace6b43907b5df9e6803ed, type: 3}
+  - {fileID: 7467480202973189232, guid: 63f6cfc1f89db5e45ab93b08131bbdc7, type: 3}
   startingRooms:
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   onceRooms:
   - {fileID: 755176377449448021, guid: 07d1ce4760a3b3641abf2517f54b6ac9, type: 3}
   onceRoomChance: 1
   bossRooms:
-  - {fileID: 8324040719812875826, guid: 53ec67cf07c334b47b3ed13abf9087a1, type: 3}
+  - {fileID: 7467480202973189232, guid: 13b1afb60f7e32c43b108dbdba7d545a, type: 3}
 --- !u!4 &174739128
 Transform:
   m_ObjectHideFlags: 0
