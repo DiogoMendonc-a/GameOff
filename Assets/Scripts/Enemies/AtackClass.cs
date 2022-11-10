@@ -13,7 +13,18 @@ public class AtackClass : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
+    
+    // OnTriggerStay: Todos os frames que está lá dentro
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerClass player = other.GetComponent<PlayerClass>();
+        if (player != null)
+        {
+            player.HP -= 50;
+        }
+    }
+    
     public void Criator(float dmg,int duration, Vector2 dir, float _speed)
     {
         DMG_DEAL_MULTIPLIER = dmg;

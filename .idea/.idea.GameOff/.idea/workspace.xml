@@ -54,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667927072275</updated>
       <workItem from="1667927079286" duration="7596000" />
-      <workItem from="1668101973767" duration="367000" />
+      <workItem from="1668101973767" duration="2271000" />
     </task>
     <servers />
   </component>
@@ -72,13 +72,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieClass.cs</url>
-          <line>97</line>
+          <line>104</line>
           <properties documentPath="C:\Users\35196\OneDrive\Ambiente de Trabalho\GameJams\GameOf22\GameOff\Assets\Scripts\Enemies\EnemieClass.cs" initialLine="90" containingFunctionPresentation="method 'StateControler'">
             <startOffsets>
-              <option value="2357" />
+              <option value="2482" />
             </startOffsets>
             <endOffsets>
-              <option value="2377" />
+              <option value="2502" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
