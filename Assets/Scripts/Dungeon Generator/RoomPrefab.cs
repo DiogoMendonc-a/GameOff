@@ -4,6 +4,8 @@ public class RoomPrefab : MonoBehaviour {
 	public BoundingBox[] boundingBoxes;
 	public GameObject[] entrances;
 
+	public GameObject[] layouts;
+
 	public Vector3 displacement;
 	public Quaternion rotation;
 
@@ -32,6 +34,14 @@ public class RoomPrefab : MonoBehaviour {
 		}
 	}
 
+	public void Init(int seed) {
+		System.Random rng = new System.Random(seed);
+
+		//TODO
+		//GameObject layout = layouts[rng.Next()%layouts.Length];
+		//GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
+		Debug.Log("Spawningn Layout");
+	}
 }
 
 [System.Serializable]

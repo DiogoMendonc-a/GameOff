@@ -198,6 +198,8 @@ public class DungeonGenerator : MonoBehaviour{
 		newRoom.transform.parent = this.transform;
 		boundingBoxes.AddRange(type.GetBoundingBoxes(position, rotation));
 
+		type.Init(rng.Next());
+
 		if(onceRoomsRemaining.Contains(prefab)) onceRoomsRemaining.Remove(prefab);
 		if(bossRoomsRemaining.Contains(prefab)) bossRoomsRemaining.Remove(prefab);
 		if(depth >= maxDepth) return;
