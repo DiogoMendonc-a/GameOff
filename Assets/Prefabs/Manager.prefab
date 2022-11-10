@@ -54,6 +54,8 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   - {fileID: 7467480202973189232, guid: c511375163da3ec4b8484bb7d312e794, type: 3}
   - {fileID: 7467480202973189232, guid: 63f6cfc1f89db5e45ab93b08131bbdc7, type: 3}
+  - {fileID: 7467480202973189232, guid: b1eb838dce5a98c4b8c0f82d2da5d65f, type: 3}
+  - {fileID: 7467480202973189232, guid: 99cc727339f4e7c4381845bc1f81c831, type: 3}
   startingRooms:
   - {fileID: 7467480202973189232, guid: efbf0e6edadc7224fbc02caeeac165c8, type: 3}
   onceRooms: []
