@@ -21,6 +21,9 @@ public class EnemieClass : MonoBehaviour
     public int FRAMES_BETWEEN_ATACK = 1000;
 
     public Vector2 direction = Vector2.zero;
+
+    public float atack_velocity = 10;
+    public int COIN_DROP = 0;
     
     // Move flag
     // -1 -> Inimigo está inativo
@@ -41,10 +44,17 @@ public class EnemieClass : MonoBehaviour
 
 
     // Start is called before the first frame update
+
+    void InitilizeEnemie()
+    {
+        return;
+    }
+    
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        InitilizeEnemie();
     }
     
     
@@ -81,7 +91,11 @@ public class EnemieClass : MonoBehaviour
             GameObject ataque = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
             
             // TO DO : change direction
-            ataque.GetComponent<AtackClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-transform.position);
+            Vector2 rando = new Vector2();
+            rando.x = Random.Range(-10, 10);
+            rando.y = Random.Range(-10, 10);
+            
+            ataque.GetComponent<AtackClass>().Criator(DMG_DEAL_MULTIPLIER,1000,rando,10);
             state = MOVE_FLAG.MOVE;
             return Vector2.zero;
         }
