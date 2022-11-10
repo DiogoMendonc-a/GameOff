@@ -28,6 +28,10 @@ public class Level {
 		rooms = new List<RoomPrefab>();
 	}
 
+	public void Degenerate() {
+		rooms = new List<RoomPrefab>();
+	}
+
 	public void AddRoom(RoomPrefab room) {
 		rooms.Add(room);
 	}

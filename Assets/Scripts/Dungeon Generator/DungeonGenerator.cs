@@ -37,7 +37,7 @@ public class DungeonGenerator : MonoBehaviour{
 
 	void Start() {
 		
-		DebugGenerate(); //DEBUG
+		//DebugGenerate(); //DEBUG
 	}
 
 	void KillAllChildren() {
@@ -72,7 +72,7 @@ public class DungeonGenerator : MonoBehaviour{
 		for (int i = 0; i < numberOfLevels; i++)
 		{
 			int levelSeed = rng.Next();
-			dungeon.AddLevel(new Level(seed));
+			dungeon.AddLevel(new Level(levelSeed));
 		}
 		return dungeon;
 	}
@@ -94,7 +94,8 @@ public class DungeonGenerator : MonoBehaviour{
 		return level;
 	}
 
-	public void DegenerateLevel() {
+	public void DegenerateLevel(Level level) {
+		level.Degenerate();
 		KillAllChildren();
 	}
 
