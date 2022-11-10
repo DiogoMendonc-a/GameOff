@@ -91,6 +91,14 @@ public class DungeonGenerator : MonoBehaviour{
 		foreach(RoomPrefab room in level.rooms) {
 			CheckConnections(room, level);
 		}
+
+		IGeneratable[] igs = GetComponentsInChildren<IGeneratable>();
+
+		foreach (IGeneratable ig in igs)
+		{
+			ig.Generate(rng.Next());
+		}
+
 		return level;
 	}
 
