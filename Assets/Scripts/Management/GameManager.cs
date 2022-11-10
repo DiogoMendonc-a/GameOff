@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
@@ -17,6 +18,13 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 		generator = GetComponent<DungeonGenerator>();
 		instance = this;
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		if(scene.name == "GameScene") {
+			generator.GenerateLevel(dungeon, 0);
+		}
 	}
 
 	public void GenerateNewDungeon(int seed) {
@@ -29,8 +37,8 @@ public class GameManager : MonoBehaviour {
 
 	public void StartNewGame() {
 		GenerateNewDungeon();
-		generator.GenerateLevel(dungeon, 0);
 		currentLevel = 0;
+		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
 	}
 
 	public void LoadLevel(int levelId) {
@@ -40,8 +48,8 @@ public class GameManager : MonoBehaviour {
 			currentLevel = -1;
 			return;
 		}
-		generator.GenerateLevel(dungeon, levelId);
 		currentLevel = levelId;
+		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
 	}
 
 	public void LoseGame() {
