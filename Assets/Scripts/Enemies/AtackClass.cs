@@ -7,17 +7,19 @@ public class AtackClass : MonoBehaviour
     
     public float DMG_DEAL_MULTIPLIER;
     public int DURATION = 100;
+    public float SPEED = 0;
 
     private Vector2 direction;
     public Rigidbody2D rb;
     public Animator animator;
 
 
-    public void Criator(float dmg,int duration, Vector2 dir)
+    public void Criator(float dmg,int duration, Vector2 dir, float _speed)
     {
         DMG_DEAL_MULTIPLIER = dmg;
         DURATION = duration;
         direction = dir;
+        SPEED = _speed;
     }
     
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class AtackClass : MonoBehaviour
             Destroy(gameObject);
         }
 
-        rb.velocity = -direction;
+        rb.velocity = -direction.normalized * SPEED;
         DURATION -= 1;
     }
 }
