@@ -14,7 +14,7 @@ public class MerchantManager : MonoBehaviour, IGeneratable {
 
 		for (int i = 0; i < numberOfItems; i++)
 		{
-			loot[i] = LootManager.GetLoot(rng.Next());
+			loot[i] = LootManager.instance.GetLoot(rng.Next());
 			float modifier = rng.Next(75, 150) / 100.0f;
 			price[i] = Mathf.FloorToInt(loot[i].baseValue * modifier);
 			bought[i] = false;

@@ -1,9 +1,15 @@
 using UnityEngine;
 
 public class LootManager : MonoBehaviour {
-	static Obtainable[] lootTable;
+	public static LootManager instance;
 
-	public static Obtainable GetLoot(int seed) {
+	void Awake() {
+		instance = this;
+	}
+
+	public Obtainable[] lootTable;
+
+	public Obtainable GetLoot(int seed) {
 		return lootTable[seed%lootTable.Length];
 	}
 }

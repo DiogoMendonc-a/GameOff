@@ -6,7 +6,7 @@ public class TreasureManager : MonoBehaviour, IGeneratable {
 	bool used = false;
 
 	void IGeneratable.Generate(int seed) { 
-		loot = LootManager.GetLoot(seed);
+		loot = LootManager.instance.GetLoot(seed);
 	}
 
 	public Obtainable Get() {
