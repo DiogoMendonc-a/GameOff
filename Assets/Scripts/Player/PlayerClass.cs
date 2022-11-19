@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerClass : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerClass : MonoBehaviour
     
     public Animator animator;
     public Rigidbody2D rb;
+    public GameObject bullet_obj;
     
     public float atack_velocity = 10;
     public int COIN_DROP_MULTIPLIER = 1;
@@ -77,6 +79,20 @@ public class PlayerClass : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        // Disparar 
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = GameObject.Instantiate(bullet_obj, transform.position, Quaternion.identity);
+            
+
+            Vector3 mouse_cords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 dir = Vector2.zero;
+            dir.x = mouse_cords.x;
+            dir.y = mouse_cords.y;
+            bullet.GetComponent<BulletClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-dir,10);
+        }
+        
         
     }
 }

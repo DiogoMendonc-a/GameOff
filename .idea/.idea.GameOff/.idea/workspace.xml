@@ -56,7 +56,7 @@
       <workItem from="1667927079286" duration="7596000" />
       <workItem from="1668101973767" duration="4341000" />
       <workItem from="1668182647889" duration="1658000" />
-      <workItem from="1668877524805" duration="1500000" />
+      <workItem from="1668877524805" duration="3187000" />
     </task>
     <servers />
   </component>
@@ -68,24 +68,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieClass.cs</url>
-          <line>104</line>
-          <properties documentPath="C:\Users\35196\OneDrive\Ambiente de Trabalho\GameJams\GameOf22\GameOff\Assets\Scripts\Enemies\EnemieClass.cs" initialLine="90" containingFunctionPresentation="method 'StateControler'">
-            <startOffsets>
-              <option value="2482" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2502" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

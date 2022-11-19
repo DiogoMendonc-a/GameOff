@@ -15,10 +15,11 @@ public class BulletClass : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        EnemieClass player = other.GetComponent<EnemieClass>();
-        if (player != null)
+        EnemieClass enemie = other.GetComponent<EnemieClass>();
+        if (enemie != null)
         {
-            player.HP -= 1;
+            enemie.HP -= 1;
+            Destroy(gameObject);
         }
     }
     
@@ -33,12 +34,19 @@ public class BulletClass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (DURATION == 0)
+        {
+            Destroy(gameObject);
+        }
+
+        rb.velocity = -direction.normalized * SPEED;
+        DURATION -= 1;
     }
 }

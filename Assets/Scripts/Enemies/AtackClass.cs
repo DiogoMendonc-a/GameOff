@@ -22,6 +22,7 @@ public class AtackClass : MonoBehaviour
         if (player != null)
         {
             player.HP -= 50;
+            Destroy(gameObject);
         }
     }
     
