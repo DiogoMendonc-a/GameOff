@@ -37,10 +37,15 @@ public class RoomPrefab : MonoBehaviour {
 	public void Init(int seed) {
 		System.Random rng = new System.Random(seed);
 
-		//TODO
-		//GameObject layout = layouts[rng.Next()%layouts.Length];
-		//GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
-		Debug.Log("Spawningn Layout");
+		if(layouts.Length == 0) return;
+		GameObject layout = layouts[rng.Next()%layouts.Length];
+		GameObject spawned = GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
+		foreach(Transform t in spawned.GetComponentsInChildren<Transform>()) {
+			if(t == spawned.transform) continue;
+			t.parent = GameManager.instance.transform;
+			t.rotation = Quaternion.identity;
+		}
+		Destroy(spawned);
 	}
 }
 

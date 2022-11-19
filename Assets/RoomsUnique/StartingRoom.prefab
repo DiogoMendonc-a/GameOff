@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7467480202973189234}
   - component: {fileID: 7467480202973189235}
   m_Layer: 0
-  m_Name: RectangleRoom
+  m_Name: StartingRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
