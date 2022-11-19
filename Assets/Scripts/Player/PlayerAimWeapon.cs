@@ -32,14 +32,25 @@ public class PlayerAimWeapon : MonoBehaviour
         if (angle < 90 && angle > -90)
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            transform.Find("Aim").transform.Find("ThisIsNotACliche").GetComponent<SpriteRenderer>().flipY = false;
+            
+            transform.Find("Aim").transform.GetComponentInChildren<SpriteRenderer>().flipY = false;
         }
         else
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            transform.Find("Aim").transform.Find("ThisIsNotACliche").GetComponent<SpriteRenderer>().flipY = true;
+            transform.Find("Aim").transform.GetComponentInChildren<SpriteRenderer>().flipY = true;
         }
         
         aimTransform.eulerAngles = new Vector3(0, 0, angle);
+
+        if (angle  > 180 || angle < 0)
+        {
+            transform.Find("Aim").transform.GetComponentInChildren<SpriteRenderer>().sortingOrder = 1;
+        }
+        else
+        {
+            transform.Find("Aim").transform.GetComponentInChildren<SpriteRenderer>().sortingOrder = -1;
+        }
+        
     }
 }

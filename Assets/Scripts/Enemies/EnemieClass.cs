@@ -111,7 +111,11 @@ public class EnemieClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        atack_frame_counter += 1;
+        if (state != MOVE_FLAG.INACTIVE)
+        {
+            atack_frame_counter += 1;
+        }
+
         if (atack_frame_counter == FRAMES_BETWEEN_ATACK)
         {
             state = MOVE_FLAG.ATACK;
