@@ -14,7 +14,9 @@ public class InGameUIManager : MonoBehaviour {
 	}
 
 	public GameObject treasureObject;
+	public GameObject merchantObject;
 	Action<bool> treasureCallback;
+	Action<int> merchantCallback;
 
 	public void ActivateTreasureUI(Obtainable treasure, Action<bool> treasureCallback) {
 		treasureObject.GetComponent<TreasureUIHandler>().SetObtainable(treasure);
@@ -22,9 +24,23 @@ public class InGameUIManager : MonoBehaviour {
 		this.treasureCallback = treasureCallback;
 	}
 
+	public void ActivateMerchantUI(Obtainable obtainable0, Obtainable obtainable1, Obtainable obtainable2, Action<int> merchantCallback) {
+		merchantObject.GetComponent<MerchantUIHandler>().SetObtainables(obtainable0, obtainable1, obtainable2);
+		merchantObject.SetActive(true);
+		this.merchantCallback = merchantCallback;
+	}
+
 	public void CloseTreasure(bool taken) {
 		treasureObject.SetActive(false);
 		treasureCallback.Invoke(taken);
+	}
+
+	public void Buy(int index) {
+		merchantCallback.Invoke(index);
+	}
+
+	public void CloseMerchant() {
+		merchantObject.SetActive(false);
 	}
 
 }
