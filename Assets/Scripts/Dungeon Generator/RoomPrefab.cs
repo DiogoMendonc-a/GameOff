@@ -34,7 +34,7 @@ public class RoomPrefab : MonoBehaviour {
 		}
 	}
 
-	public void Init(int seed) {
+	public virtual void Init(int seed) {
 		System.Random rng = new System.Random(seed);
 
 		if(layouts.Length == 0) return;
