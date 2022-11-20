@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerClass : MonoBehaviour
 {
     public static PlayerClass instance;
-    
+
     [HideInInspector]
     public Inventory inventory;
 
@@ -28,6 +28,7 @@ public class PlayerClass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GetComponent<Inventory>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }

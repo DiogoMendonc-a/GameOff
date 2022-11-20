@@ -7,15 +7,19 @@ public class Inventory : MonoBehaviour {
 	public List<Item> itens { private set; get; }
 	public Weapon weapon { private set; get; }
 
-	void AddItem(Item item) {
+	private void Awake() {
+		itens = new List<Item>();
+	}
+
+	public void AddItem(Item item) {
 		itens.Add(item);
 	}
 
-	void SetWeapon(Weapon weapon) {
+	public void SetWeapon(Weapon weapon) {
 		//TODO
 	}
 
-	void AddMoney(int value) {
+	public void AddMoney(int value) {
 		foreach (Item item in itens)
 		{
 			item.OnGetMoney(value);
@@ -23,7 +27,7 @@ public class Inventory : MonoBehaviour {
 		money += value;
 	}
 
-	void RemoveMoney(int value) {
+	public void RemoveMoney(int value) {
 		money += value;
 	}
 

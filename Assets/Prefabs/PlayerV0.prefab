@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1919065882610960000}
   - component: {fileID: 1919065882610960015}
   - component: {fileID: 1919065882610960014}
+  - component: {fileID: 5139647047150474863}
   m_Layer: 0
   m_Name: PlayerV0
   m_TagString: Untagged
@@ -113,12 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad5f02f9eb24e746a2370adb3fa7abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   HP: 100
   MOV_SPEED: 4
   DMG_DEAL_MULTIPLIER: 1
   DMG_RECEIVE_MULTIPLIER: 1
   animator: {fileID: 0}
   rb: {fileID: 0}
+  bullet_obj: {fileID: 0}
   atack_velocity: 10
   COIN_DROP_MULTIPLIER: 1
 --- !u!61 &1919065882610960015
@@ -168,6 +171,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5139647047150474863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919065882610960005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a7e85452aa9f24a9a04654169c5993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1919065883373025676
 GameObject:
   m_ObjectHideFlags: 0
