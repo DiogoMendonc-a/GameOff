@@ -129,6 +129,7 @@ public class EnemieClass : MonoBehaviour
             
             // Need this to not revive;
             atack_frame_counter = FRAMES_BETWEEN_ATACK + 10;
+            OnDie();
         }
         
         rb.velocity = StateControler();
@@ -140,5 +141,9 @@ public class EnemieClass : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+
+    public virtual void OnDie() {
+        Destroy(gameObject);
     }
 }

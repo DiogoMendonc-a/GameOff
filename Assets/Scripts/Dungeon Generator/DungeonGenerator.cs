@@ -17,8 +17,10 @@ public class DungeonGenerator : MonoBehaviour{
 	public int onceRoomChance;
 	List<GameObject> onceRoomsRemaining;
 	
+	public GameObject[] requiredRoomsPerLevel;
 	public GameObject[] bossRooms;
 	List<GameObject> bossRoomsRemaining;
+	List<GameObject> requiredRoomsRemaining;
 
 	Dungeon d; //DEBUG
 	
@@ -77,6 +79,20 @@ public class DungeonGenerator : MonoBehaviour{
 		return dungeon;
 	}
 
+	void SetRequiredRooms(System.Random rng) {
+		requiredRoomsRemaining = new List<GameObject>(requiredRoomsPerLevel);
+
+		if(bossRoomsRemaining.Count == 0) {
+			Debug.LogWarning("No Boss Rooms Remain to Be Placed! Reseting List");
+			bossRoomsRemaining = new List<GameObject>(bossRooms);
+		}
+
+		GameObject bossRoom = bossRoomsRemaining[rng.Next()%bossRoomsRemaining.Count];
+		bossRoomsRemaining.Remove(bossRoom);
+
+		requiredRoomsRemaining.Add(bossRoom);
+	} 
+
 	public Level GenerateLevel(Dungeon dungeon, int levelId) {
 		Level level = dungeon.GetLevel(levelId);
 		System.Random rng = new System.Random(level.levelSeed);
@@ -84,9 +100,11 @@ public class DungeonGenerator : MonoBehaviour{
 		boundingBoxes = new List<Rect>();
 		
 		GameObject startingRoom = startingRooms[rng.Next() % startingRooms.Length];
+
+		SetRequiredRooms(rng);
 		
 		GenerateRoom(rng.Next(), Vector3.zero, Quaternion.identity, level, startingRoom, 0);
-		GenerateBossRoom(level);
+		GenerateRequiredRooms(level);
 		
 		foreach(RoomPrefab room in level.rooms) {
 			CheckConnections(room, level);
@@ -169,6 +187,9 @@ public class DungeonGenerator : MonoBehaviour{
 		if(value < onceRoomChance && onceRoomsRemaining.Count > 0) {
 			return onceRoomsRemaining[rng.Next()%onceRoomsRemaining.Count];
 		}
+		if(value < onceRoomChance * 2 && requiredRoomsRemaining.Count > 0) {
+			return requiredRoomsRemaining[rng.Next()%requiredRoomsRemaining.Count];
+		}
 		return prefabs[rng.Next() % prefabs.Length];
 	}
 
@@ -209,7 +230,7 @@ public class DungeonGenerator : MonoBehaviour{
 		type.Init(rng.Next());
 
 		if(onceRoomsRemaining.Contains(prefab)) onceRoomsRemaining.Remove(prefab);
-		if(bossRoomsRemaining.Contains(prefab)) bossRoomsRemaining.Remove(prefab);
+		if(requiredRoomsRemaining.Contains(prefab)) requiredRoomsRemaining.Remove(prefab);
 		if(depth >= maxDepth) return;
 
 		foreach (GameObject exit in type.entrances)
@@ -218,25 +239,26 @@ public class DungeonGenerator : MonoBehaviour{
 		}
 	}
 
-	void GenerateBossRoom(Level level) {
+	void GenerateRequiredRooms(Level level) {
 		System.Random rng = new System.Random(level.levelSeed);
 
-		if(bossRoomsRemaining.Count == 0) {
-			Debug.LogWarning("No Boss Rooms Remain to Be Placed! Reseting List");
-			bossRoomsRemaining = new List<GameObject>(bossRooms);
+		if(requiredRoomsRemaining.Count == 0) {
+			return;
 		}
 
-		GameObject bossRoom = bossRoomsRemaining[rng.Next()%bossRoomsRemaining.Count];
-		RoomPrefab bossRoomType = bossRoom.GetComponent<RoomPrefab>();
+		GameObject requiredRoom = requiredRoomsRemaining[rng.Next()%requiredRoomsRemaining.Count];
+		RoomPrefab roomType = requiredRoom.GetComponent<RoomPrefab>();
 		
 		foreach (RoomPrefab room in level.rooms)
 		{
 			foreach (GameObject exit in room.entrances)
 			{
-				if(AttemptSpawnRoom(rng, level, exit, 200, bossRoomType, bossRoom)) {
+				if(AttemptSpawnRoom(rng, level, exit, 200, roomType, requiredRoom)) {
 					return;
 				}
 			}
 		}
+		
+		GenerateRequiredRooms(level);
 	}
 }
