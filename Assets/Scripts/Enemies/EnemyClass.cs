@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemieClass : MonoBehaviour
+public class EnemyClass : MonoBehaviour
 {
 
     public float HP = 100.0f;
@@ -45,7 +42,7 @@ public class EnemieClass : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void InitilizeEnemie()
+    void InitilizeEnemy()
     {
         return;
     }
@@ -54,7 +51,7 @@ public class EnemieClass : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        InitilizeEnemie();
+        InitilizeEnemy();
     }
     
     
@@ -95,7 +92,7 @@ public class EnemieClass : MonoBehaviour
             rando.x = Random.Range(-10, 10);
             rando.y = Random.Range(-10, 10);
             
-            ataque.GetComponent<AtackClass>().Criator(DMG_DEAL_MULTIPLIER,1000,rando,10);
+            ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,rando,10);
             state = MOVE_FLAG.MOVE;
             return Vector2.zero;
         }

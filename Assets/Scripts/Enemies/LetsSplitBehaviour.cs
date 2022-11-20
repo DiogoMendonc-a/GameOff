@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LetsSplitBehaviour : EnemieClass
+public class LetsSplitBehaviour : EnemyClass
 {
     public GameObject child;
 

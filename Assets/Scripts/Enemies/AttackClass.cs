@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtackClass : MonoBehaviour
+public class AttackClass : MonoBehaviour
 {
     
     public float DMG_DEAL_MULTIPLIER;
@@ -26,7 +26,7 @@ public class AtackClass : MonoBehaviour
         }
     }
     
-    public void Criator(float dmg,int duration, Vector2 dir, float _speed)
+    public void Create(float dmg,int duration, Vector2 dir, float _speed)
     {
         DMG_DEAL_MULTIPLIER = dmg;
         DURATION = duration;

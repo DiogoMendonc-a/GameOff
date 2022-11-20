@@ -15,7 +15,7 @@ public class BulletClass : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        EnemieClass enemie = other.GetComponent<EnemieClass>();
+        EnemyClass enemie = other.GetComponent<EnemyClass>();
         if (enemie != null)
         {
             enemie.HP -= 1;
