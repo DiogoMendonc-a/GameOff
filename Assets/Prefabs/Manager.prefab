@@ -59,8 +59,9 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: 99cc727339f4e7c4381845bc1f81c831, type: 3}
   startingRooms:
   - {fileID: 7467480202973189232, guid: f213b5e21eba5534fa63133061b13148, type: 3}
-  onceRooms: []
-  onceRoomChance: 0
+  onceRooms:
+  - {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
+  onceRoomChance: 100
   bossRooms:
   - {fileID: 7467480202973189232, guid: 13b1afb60f7e32c43b108dbdba7d545a, type: 3}
 --- !u!114 &2084610305466235165
