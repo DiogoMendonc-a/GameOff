@@ -140,6 +140,10 @@ public class EnemyClass : MonoBehaviour
         }
     }
 
+    public void DealDamage(int value) {
+        //TODO
+    }
+
     public virtual void OnDie() {
         Destroy(gameObject);
     }

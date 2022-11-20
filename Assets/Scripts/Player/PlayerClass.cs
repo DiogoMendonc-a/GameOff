@@ -1,12 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerClass : MonoBehaviour
 {
+    public static PlayerClass instance;
     
+    [HideInInspector]
+    public Inventory inventory;
+
     public float HP = 100.0f;
     public float MOV_SPEED = 1.0f;
     
@@ -19,6 +19,10 @@ public class PlayerClass : MonoBehaviour
     
     public float atack_velocity = 10;
     public int COIN_DROP_MULTIPLIER = 1;
+
+    void Awake() {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
