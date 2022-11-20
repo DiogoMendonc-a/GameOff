@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: f213b5e21eba5534fa63133061b13148, type: 3}
   onceRooms:
   - {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
+  - {fileID: 7467480202973189232, guid: 0e2403f181b856e419a6a7d4e9984be2, type: 3}
   onceRoomChance: 100
   bossRooms:
   - {fileID: 7467480202973189232, guid: 13b1afb60f7e32c43b108dbdba7d545a, type: 3}

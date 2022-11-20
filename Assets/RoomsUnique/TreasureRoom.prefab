@@ -141,6 +141,8 @@ MonoBehaviour:
   - {fileID: 4639656157840007989}
   - {fileID: 7509963152269977466}
   - {fileID: 6081990119461251873}
+  layouts:
+  - {fileID: 2647490499727997576, guid: 754bbc479f2bad643a9a1ec4c9735c42, type: 3}
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7467480203801337453

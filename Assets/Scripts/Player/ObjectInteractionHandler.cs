@@ -16,7 +16,7 @@ public class ObjectInteractionHandler : MonoBehaviour {
 		Debug.Log(other.name);
 		Interactable ii = other.GetComponent<Interactable>();
 		if(ii != null) {
-			if(!interactablesInRange.Contains(ii))
+			if(!interactablesInRange.Contains(ii) && ii.interactionEnabled)
 				interactablesInRange.Add(ii);
 		}
 	}
@@ -45,11 +45,18 @@ public class ObjectInteractionHandler : MonoBehaviour {
 
 		foreach (Interactable ii in interactablesInRange)
 		{
+			if(!ii.interactionEnabled) continue;
 			float newDistance = Vector3.Distance(ii.transform.position, this.transform.position);
 			if(newDistance < distance) {
 				closest = ii;
 				distance = newDistance;
 			}	
+		}
+
+		if(closest == null) {
+			interactionIndicator.SetActive(false);
+			active = null;
+			return;
 		}
 
 		active = closest;

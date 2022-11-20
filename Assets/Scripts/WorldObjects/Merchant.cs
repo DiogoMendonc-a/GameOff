@@ -34,5 +34,4 @@ public class Merchant : Interactable, IGeneratable
 		selling[answer] = false;
 		CallUI();
 	}
-
 }
