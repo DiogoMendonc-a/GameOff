@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2084610305466235155}
   - component: {fileID: 2084610305466235165}
   - component: {fileID: 8687284086171891849}
+  - component: {fileID: 613806222084429310}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -63,6 +64,7 @@ MonoBehaviour:
   - {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
   - {fileID: 7467480202973189232, guid: 0e2403f181b856e419a6a7d4e9984be2, type: 3}
   onceRoomChance: 100
+  requiredRoomsPerLevel: []
   bossRooms:
   - {fileID: 7467480202973189232, guid: 13b1afb60f7e32c43b108dbdba7d545a, type: 3}
 --- !u!114 &2084610305466235165
@@ -91,3 +93,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable:
   - {fileID: 11400000, guid: fb5fbd60bed5c224d8db54cb7cea594a, type: 2}
+--- !u!114 &613806222084429310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084610305466235154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4207101c90e49f64695d45a6edfe03fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyObj: {fileID: 7576762856065301368, guid: a69e55df66d03864e840bd6608690aa9, type: 3}

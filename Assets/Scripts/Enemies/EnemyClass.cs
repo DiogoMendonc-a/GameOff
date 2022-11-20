@@ -145,6 +145,11 @@ public class EnemyClass : MonoBehaviour
     }
 
     public virtual void OnDie() {
+        for (int i = 0; i < COIN_DROP; i++)
+        {
+            Vector3 randomPos = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }
