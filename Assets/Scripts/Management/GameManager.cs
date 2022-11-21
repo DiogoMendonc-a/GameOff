@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 		if(scene.name == "GameScene") {
-			generator.GenerateLevel(dungeon, 0);
+			generator.GenerateLevel(dungeon, currentLevel);
 		}
 	}
 
