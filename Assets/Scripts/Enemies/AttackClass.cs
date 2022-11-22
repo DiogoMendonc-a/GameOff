@@ -21,7 +21,7 @@ public class AttackClass : MonoBehaviour
         PlayerClass player = other.GetComponent<PlayerClass>();
         if (player != null)
         {
-            player.HP -= 50;
+            player.ChangeHp(-50);
             Destroy(gameObject);
         }
     }

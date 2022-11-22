@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class InGameUIManager : MonoBehaviour {
@@ -12,6 +13,8 @@ public class InGameUIManager : MonoBehaviour {
 		}
 		instance = this;
 	}
+
+	public Image hpBar;
 
 	public GameObject treasureObject;
 	public GameObject merchantObject;
@@ -33,6 +36,10 @@ public class InGameUIManager : MonoBehaviour {
 	public void CloseTreasure(bool taken) {
 		treasureObject.SetActive(false);
 		treasureCallback.Invoke(taken);
+	}
+
+	public void SetHealth(float fraction) {
+		hpBar.fillAmount = fraction;
 	}
 
 	public void Buy(int index) {

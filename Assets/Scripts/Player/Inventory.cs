@@ -15,8 +15,21 @@ public class Inventory : MonoBehaviour {
 		itens.Add(item);
 	}
 
+
 	public void SetWeapon(Weapon weapon) {
 		//TODO
+	}
+
+	public void AddObtainable(Obtainable o) {
+		Item i = o as Item;
+		if(i != null) {
+			AddItem(i);
+		}
+
+		Weapon w = o as Weapon;
+		if(w != null) {
+			SetWeapon(w);
+		}
 	}
 
 	public void AddMoney(int value) {

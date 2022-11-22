@@ -5,6 +5,7 @@ public class MerchantManager : MonoBehaviour, IGeneratable {
 	public Obtainable[] loot { private set; get; }
 	public int[] price { private set; get; }
 	bool[] bought;
+	
 	void IGeneratable.Generate(int seed) {
 		loot = new Obtainable[numberOfItems];
 		bought = new bool[numberOfItems];
@@ -21,19 +22,19 @@ public class MerchantManager : MonoBehaviour, IGeneratable {
 		}
 	}
 
-	//Obtainable Buy(int id) {
-	//	if(bought[id]) {
-	//		Debug.LogWarning("Trying to Buy Item that Had Already Been Bought!");
-	//		return null;
-	//	}
-	//	if(Player.money > price[id]) {
-	//		bought[id] = true;
-	//		return loot[id];
-	//	}
-	//	else{
-	//		Debug.LogWarning("Trying to Buy Item without Enouhg Money!");
-	//		return null;
-	//	}
-	//}
+	Obtainable Buy(int id) {
+		if(bought[id]) {
+			Debug.LogWarning("Trying to Buy Item that Had Already Been Bought!");
+			return null;
+		}
+		if(PlayerClass.instance.inventory.money > price[id]) {
+			bought[id] = true;
+			return loot[id];
+		}
+		else{
+			Debug.LogWarning("Trying to Buy Item without Enouhg Money!");
+			return null;
+		}
+	}
 
 }

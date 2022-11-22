@@ -31,6 +31,7 @@ public class Merchant : Interactable, IGeneratable
     }
     
     void HandleResponse(int answer) {
+        PlayerClass.instance.inventory.AddObtainable(stock[answer]);
 		selling[answer] = false;
 		CallUI();
 	}

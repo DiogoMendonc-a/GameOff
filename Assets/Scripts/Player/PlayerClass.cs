@@ -7,7 +7,8 @@ public class PlayerClass : MonoBehaviour
     [HideInInspector]
     public Inventory inventory;
 
-    public float HP = 100.0f;
+    public float MAX_HP = 100.0f;
+    public float CURRENT_HP;
     public float MOV_SPEED = 1.0f;
     
     public float DMG_DEAL_MULTIPLIER = 1.0f;
@@ -22,6 +23,7 @@ public class PlayerClass : MonoBehaviour
 
     void Awake() {
         instance = this;
+        CURRENT_HP = MAX_HP;
     }
 
 
@@ -33,6 +35,12 @@ public class PlayerClass : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void ChangeHp(int value) {
+        CURRENT_HP += value;
+        CURRENT_HP = Mathf.Clamp(CURRENT_HP, 0, MAX_HP);
+
+        InGameUIManager.instance.SetHealth(CURRENT_HP/MAX_HP);
+    } 
 
     Vector2 MovementControler()
     {
@@ -80,7 +88,7 @@ public class PlayerClass : MonoBehaviour
         rb.velocity = MovementControler();
         FlipControler();
 
-        if (HP <= 0)
+        if (CURRENT_HP <= 0)
         {
             Destroy(gameObject);
         }
