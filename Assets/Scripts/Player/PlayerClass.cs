@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerClass : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class PlayerClass : MonoBehaviour
     
     public float atack_velocity = 10;
     public int COIN_DROP_MULTIPLIER = 1;
+
+    //dash 
+    private Vector2 dash_dir;
+    private bool can_dash = true;
+    private bool is_dashing;
+    private float dash_power = 10f;
+    private float dash_time = 0.2f;
+    private float dash_cooldown = 1f;
+    [SerializeField] private TrailRenderer tr; 
 
     void Awake() {
         instance = this;
@@ -81,10 +91,28 @@ public class PlayerClass : MonoBehaviour
         }
     }
     
+    private IEnumerator Dash()
+    {
+        can_dash = false;
+        is_dashing = true;
+        dash_dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        tr.emitting = true;
+        rb.velocity = dash_dir.normalized * dash_power;
+        yield return new WaitForSeconds(dash_time);
+        tr.emitting = false;
+        is_dashing = false;
+        yield return new WaitForSeconds(dash_cooldown);
+        can_dash = true;
+    }
     
     // Update is called once per frame
     void Update()
     {
+        if(is_dashing)
+        {
+            return;
+        }
+
         rb.velocity = MovementControler();
         FlipControler();
 
@@ -106,6 +134,10 @@ public class PlayerClass : MonoBehaviour
             bullet.GetComponent<BulletClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-dir,10);
         }
         
-        
+        // Dash
+        if (Input.GetKey(KeyCode.E) && can_dash)
+        {
+            StartCoroutine(Dash());
+        }     
     }
 }
