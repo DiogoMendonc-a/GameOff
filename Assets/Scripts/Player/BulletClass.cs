@@ -47,4 +47,8 @@ public class BulletClass : MonoBehaviour
         rb.velocity = -direction.normalized * SPEED;
         DURATION -= 1;
     }
+
+    void OnDestroy() {
+        PlayerClass.instance.inventory.OnBulletHit(transform.position);
+    }
 }

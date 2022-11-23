@@ -54,4 +54,11 @@ public class Inventory : MonoBehaviour {
 		money += value;
 	}
 
+	public void OnBulletHit(Vector3 position) {
+		foreach (Item item in itens)
+		{
+			item.OnBulletHit(position);
+		}
+	}
+
 }
