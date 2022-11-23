@@ -15,6 +15,13 @@ public class Inventory : MonoBehaviour {
 		itens.Add(item);
 	}
 
+	public bool HasItem<T>(){
+		foreach (Item item in itens)
+		{
+			if(item.GetType() == typeof(T)) return true;
+		}
+		return false;
+	}
 
 	public void SetWeapon(Weapon weapon) {
 		//TODO
@@ -32,10 +39,12 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	public void AddMoney(int value) {
-		foreach (Item item in itens)
-		{
-			item.OnGetMoney(value);
+	public void AddMoney(int value, bool skipEvents = false) {
+		if(!skipEvents) {
+			foreach (Item item in itens)
+			{
+				item.OnGetMoney(value);
+			}
 		}
 		money += value;
 	}
