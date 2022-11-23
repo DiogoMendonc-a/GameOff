@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour {
 
 	public void AddItem(Item item) {
 		itens.Add(item);
+		item.OnPickUp();
 	}
 
 	public bool HasItem<T>(){

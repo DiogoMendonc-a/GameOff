@@ -134,26 +134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
-      propertyPath: onceRoomChance
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
-      propertyPath: onceRooms.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
-      propertyPath: requiredRoomsPerLevel.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
-      propertyPath: requiredRoomsPerLevel.Array.data[0]
-      value: 
-      objectReference: {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
-    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
-      propertyPath: requiredRoomsPerLevel.Array.data[1]
-      value: 
-      objectReference: {fileID: 7467480202973189232, guid: 0e2403f181b856e419a6a7d4e9984be2, type: 3}
     - target: {fileID: 2084610305466235164, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -716,7 +696,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.3
+  m_fontSize: 101.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

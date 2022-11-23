@@ -49,7 +49,8 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 		currentLevel = levelId;
-		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+		PlayerClass.instance.transform.position = new Vector3();
+		generator.GenerateLevel(dungeon, currentLevel);
 	}
 
 	public void LoseGame() {

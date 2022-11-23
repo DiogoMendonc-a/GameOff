@@ -51,6 +51,13 @@ public class PlayerClass : MonoBehaviour
 
         InGameUIManager.instance.SetHealth(CURRENT_HP/MAX_HP);
     } 
+    
+    public void ChangeMaxHp(int value) {
+        MAX_HP += value;
+        CURRENT_HP = Mathf.Clamp(CURRENT_HP, 0, MAX_HP);
+
+        InGameUIManager.instance.SetHealth(CURRENT_HP/MAX_HP);
+    } 
 
     Vector2 MovementControler()
     {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b34af9500680b499561a8f04ffe389, type: 3}
   m_Name: PennySavedPennyEarned
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  baseValue: 0
-  sprite: {fileID: 0}
+  title: Penny Saved, Penny Earned
+  description: Doubles the value of picked money
+  baseValue: 300
+  sprite: {fileID: 21300000, guid: eb0234096ebe4f6489a38b5a7e2677ec, type: 3}

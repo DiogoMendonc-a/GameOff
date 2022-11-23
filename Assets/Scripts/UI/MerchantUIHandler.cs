@@ -33,7 +33,7 @@ public class MerchantUIHandler : MonoBehaviour
         item.title.text = obtainable.title;
         item.image.sprite = obtainable.sprite;
         item.description.text = obtainable.description;
-        item.price.text = obtainable.baseValue.ToString() + " G";
+        item.price.text = obtainable.basePrice.ToString() + " G";
         item.button.interactable = true;
     }
 
