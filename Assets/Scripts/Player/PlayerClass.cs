@@ -28,10 +28,10 @@ public class PlayerClass : MonoBehaviour
     private Vector2 dash_dir;
     private bool can_dash = true;
     private bool is_dashing;
-    private float dash_power = 10f;
-    private float dash_time = 0.2f;
-    private float dash_cooldown = 1f;
-    [SerializeField] private TrailRenderer tr; 
+    public float dash_power = 10f;
+    public float dash_time = 0.2f;
+    public float dash_cooldown = 1f;
+    public TrailRenderer tr; 
 
     void Awake() {
         instance = this;
@@ -144,7 +144,7 @@ public class PlayerClass : MonoBehaviour
         }
         
         // Dash
-        if (Input.GetKey(KeyCode.E) && can_dash)
+        if (Input.GetKey(KeyCode.Space) && can_dash)
         {
             StartCoroutine(Dash());
         }     
