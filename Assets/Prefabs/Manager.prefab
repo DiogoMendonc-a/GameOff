@@ -92,9 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable:
-  - {fileID: 11400000, guid: fb5fbd60bed5c224d8db54cb7cea594a, type: 2}
   - {fileID: 11400000, guid: 4bf78d3fb9cf4b04fb3961151dc7156c, type: 2}
   - {fileID: 11400000, guid: 62fcf1d72ce83ec4193ce24ec7cd5b6d, type: 2}
+  - {fileID: 11400000, guid: 5b9ae1162db7bd243bd9ca56572e923f, type: 2}
+  - {fileID: 11400000, guid: bc8469fd3caf041418a0b63a30146787, type: 2}
 --- !u!114 &613806222084429310
 MonoBehaviour:
   m_ObjectHideFlags: 0
