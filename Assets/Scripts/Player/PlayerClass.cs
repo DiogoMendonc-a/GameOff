@@ -128,7 +128,15 @@ public class PlayerClass : MonoBehaviour
 
         if (CURRENT_HP <= 0)
         {
-            Destroy(gameObject);
+            if(PlayerClass.instance.inventory.HasItem<SecondWind>() && !SecondWind.used) {
+                MAX_HP = MAX_HP * SecondWind.percentage;
+                CURRENT_HP = MAX_HP * SecondWind.percentage;
+                InGameUIManager.instance.SetHealth(CURRENT_HP/MAX_HP);
+                SecondWind.used = true;
+            }
+            else {
+                Destroy(gameObject);
+            }
         }
         
         // Disparar 
