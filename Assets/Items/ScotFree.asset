@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d83eff6a987f41a52a41e84a9605c, type: 3}
   m_Name: ScotFree
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Scot Free
+  description: Increses Movement Speed and Defense
   basePrice: 0
-  sprite: {fileID: 0}
-  movSpeedIncrease: 0
-  damageReduction: 0
+  sprite: {fileID: 21300000, guid: 765a23c6dfd130c48a15511a25b48cee, type: 3}
+  movSpeedIncrease: 1
+  damageReduction: 0.8
