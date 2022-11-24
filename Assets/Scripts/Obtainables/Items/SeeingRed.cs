@@ -7,7 +7,7 @@ public class SeeingRed : Item
 	public float defeseReduction;
     public override void OnPickUp()
     {
-        PlayerClass.instance.DMG_DEAL_MULTIPLIER += damageIncrease;
+        PlayerClass.instance.DMG_DEAL_MULTIPLIER *= damageIncrease;
 		PlayerClass.instance.DMG_RECEIVE_MULTIPLIER *= defeseReduction;
     }
 }

@@ -7,7 +7,7 @@ public class GlassHousesThrowStones : Item
 	public int hpDecrease;
     public override void OnPickUp()
     {
-        PlayerClass.instance.DMG_DEAL_MULTIPLIER += damageIncrease;
+        PlayerClass.instance.DMG_DEAL_MULTIPLIER *= damageIncrease;
         PlayerClass.instance.ChangeMaxHp(-hpDecrease);
     }
 }

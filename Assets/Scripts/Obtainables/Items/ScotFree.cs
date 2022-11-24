@@ -7,7 +7,7 @@ public class ScotFree : Item
 	public float damageReduction;
     public override void OnPickUp()
     {
-		PlayerClass.instance.MOV_SPEED += movSpeedIncrease;
+		PlayerClass.instance.MOV_SPEED *= movSpeedIncrease;
 		PlayerClass.instance.DMG_RECEIVE_MULTIPLIER *= damageReduction;
     }
 }

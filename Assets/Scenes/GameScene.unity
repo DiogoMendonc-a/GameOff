@@ -4265,7 +4265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c420ea06a67b14b939736d5b7bb916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 0}
+  hpBar: {fileID: 1594643181}
   treasureObject: {fileID: 286702508}
   merchantObject: {fileID: 806668479}
 --- !u!1 &1936119114

@@ -6,6 +6,6 @@ public class WhenItRainsItPours : Item {
     
 	public override void OnPickUp()
     {
-        PlayerClass.instance.CLIP_SIZE_MODIFIER += clipSizeIncrease;
+        PlayerClass.instance.CLIP_SIZE_MODIFIER *= clipSizeIncrease;
     }
 }

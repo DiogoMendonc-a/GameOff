@@ -7,7 +7,7 @@ public class FastAndLoose : Item
 	public float fireRateIncrease;
     public override void OnPickUp()
     {
-        PlayerClass.instance.MOV_SPEED += movSpeedIncrease;
-        PlayerClass.instance.FIRE_RATE_MULTIPLIER += fireRateIncrease;
+        PlayerClass.instance.MOV_SPEED *= movSpeedIncrease;
+        PlayerClass.instance.FIRE_RATE_MULTIPLIER *= fireRateIncrease;
     }
 }

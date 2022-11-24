@@ -6,6 +6,6 @@ public class HorsingAround : Item
 	public float fireRateIncrease;
     public override void OnPickUp()
     {
-        PlayerClass.instance.FIRE_RATE_MULTIPLIER += fireRateIncrease;
+        PlayerClass.instance.FIRE_RATE_MULTIPLIER *= fireRateIncrease;
     }
 }
