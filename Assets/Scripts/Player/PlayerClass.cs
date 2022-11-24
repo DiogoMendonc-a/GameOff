@@ -118,7 +118,7 @@ public class PlayerClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(is_dashing)
+        if(is_dashing || InGameUIManager.instance.openMenu)
         {
             return;
         }
