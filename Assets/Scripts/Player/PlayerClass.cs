@@ -141,6 +141,9 @@ public class PlayerClass : MonoBehaviour
             Vector2 dir = Vector2.zero;
             dir.x = mouse_cords.x;
             dir.y = mouse_cords.y;
+            if(inventory.HasItem<HorsingAround>()) {
+                dir = ERandom.GetRandomPlanarVector();
+            }
             bullet.GetComponent<BulletClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-dir,10);
         }
         

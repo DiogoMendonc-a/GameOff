@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf2b7e55bd7ecc46ae301e8a230d75e, type: 3}
   m_Name: PullAFastOne
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Pull a Fast One
+  description: Random chance of instant reload
   basePrice: 0
-  sprite: {fileID: 0}
-  chance: 0
+  sprite: {fileID: 21300000, guid: 7185f7d98e813a74da68d6ed317de929, type: 3}
+  chance: 20

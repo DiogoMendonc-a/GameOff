@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a935273a0c70ae41852ec977b718187, type: 3}
   m_Name: WhenItRainsItPours
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: When It Rains It Pours
+  description: Increses Clip SIze
   basePrice: 0
-  sprite: {fileID: 0}
-  clipSizeIncrease: 0
+  sprite: {fileID: 21300000, guid: 0482b67f79026b24485a748406081aa9, type: 3}
+  clipSizeIncrease: 0.5
