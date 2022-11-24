@@ -648,8 +648,7 @@ MonoBehaviour:
   - {fileID: 4639656157840007989}
   - {fileID: 7509963152269977466}
   - {fileID: 6081990119461251873}
-  layouts:
-  - {fileID: 349640069809976341, guid: 5b878b91eda481b419cccf093fdf9fc9, type: 3}
+  layouts: []
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   enemies: []
