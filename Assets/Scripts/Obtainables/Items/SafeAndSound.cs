@@ -7,9 +7,8 @@ public class SafeAndSound : Item
 	public float damageReduction;
     public override void OnPickUp()
     {
-        PlayerClass.instance.MAX_HP += MaxHpIncrease;
-        PlayerClass.instance.ChangeHp(MaxHpIncrease);
         PlayerClass.instance.ChangeMaxHp(MaxHpIncrease);
+        PlayerClass.instance.ChangeHp(MaxHpIncrease);
 		PlayerClass.instance.DMG_RECEIVE_MULTIPLIER *= damageReduction;
     }
 }
