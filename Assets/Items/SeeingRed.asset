@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b364adc5fc2903648b4032a1701cc232, type: 3}
-  m_Name: SecondWind
+  m_Script: {fileID: 11500000, guid: e7998ab648a39c74ba3f33641b4fd071, type: 3}
+  m_Name: SeeingRed
   m_EditorClassIdentifier: 
-  title: Second Wind
-  description: When you die, revives you with half maximum hp. Works only once.
+  title: Seeing Red
+  description: Raises damage dealt, increases damage taken
   basePrice: 0
-  sprite: {fileID: 21300000, guid: d9d429e44f6cad74fa8907dfdebd1fa7, type: 3}
-  modifier: 0.5
+  sprite: {fileID: 21300000, guid: ea8c9270d7ecf114988012e90b1e948c, type: 3}
+  damageIncrease: 1
+  defeseReduction: 2
