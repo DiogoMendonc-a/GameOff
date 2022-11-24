@@ -9,6 +9,11 @@ public class Weapon : Obtainable {
 
 	public virtual void ReloadStart() {
 		timeToReload = reloadTime;
+		if(PlayerClass.instance.inventory.HasItem<PullAFastOne>()) {
+			int roll = Random.Range(0, 100);
+			if(roll < PullAFastOne.chanceToTrigger) timeToReload = 0;
+			
+		}
 	}
 
 	public virtual void ReloadEnd() {
