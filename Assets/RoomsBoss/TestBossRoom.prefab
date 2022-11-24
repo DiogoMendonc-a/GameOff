@@ -3272,7 +3272,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7467480202973189234}
   - component: {fileID: -1571068542096156912}
-  m_Layer: 0
+  - component: {fileID: 8957256923312529168}
+  m_Layer: 6
   m_Name: TestBossRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3338,8 +3339,35 @@ MonoBehaviour:
   layouts: []
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
+  enemies: []
   nextLevelDoor: {fileID: 9122972490081865634}
   boss: {fileID: 4873566495300048683}
+--- !u!61 &8957256923312529168
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467480202973189232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015602112, y: -0.01560235}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.944431, y: 11.890617}
+  m_EdgeRadius: 0
 --- !u!1 &7467480203040565548
 GameObject:
   m_ObjectHideFlags: 0

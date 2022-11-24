@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7811dcac7970444e911986161fbb60d, type: 3}
   m_Name: QuickBuck
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Quick Buck
+  description: The First Enemy Killed on Each Level Drops a Lot More Coins
   basePrice: 0
-  sprite: {fileID: 0}
-  moneyMultiplier: 0
+  sprite: {fileID: 21300000, guid: 0bacba87a2f5b834caf5771ac87651f1, type: 3}
+  moneyMultiplier: 10

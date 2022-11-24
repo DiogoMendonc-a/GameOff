@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7467480202973189234}
   - component: {fileID: 7467480202973189235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RoomBlueprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +51,10 @@ MonoBehaviour:
     centerX: 0
     centerY: 0
   entrances: []
+  layouts: []
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
+  enemies: []
 --- !u!1 &7467480203040565548
 GameObject:
   m_ObjectHideFlags: 0

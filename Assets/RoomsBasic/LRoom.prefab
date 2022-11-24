@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7467480202973189234}
   - component: {fileID: 7467480202973189235}
-  m_Layer: 0
+  - component: {fileID: 8092278777535379076}
+  - component: {fileID: 7652344463253767143}
+  m_Layer: 6
   m_Name: LRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,8 +65,62 @@ MonoBehaviour:
   - {fileID: 3112589435800669889}
   - {fileID: 8110206843291630961}
   - {fileID: 3355754915511829734}
+  layouts: []
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
+  enemies: []
+--- !u!61 &8092278777535379076
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467480202973189232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05981922, y: -3.6190612}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.937872, y: 7.879206}
+  m_EdgeRadius: 0
+--- !u!61 &7652344463253767143
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467480202973189232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.5293326, y: 3.5741963}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.058665, y: 8.148394}
+  m_EdgeRadius: 0
 --- !u!1 &7467480203801337453
 GameObject:
   m_ObjectHideFlags: 0
