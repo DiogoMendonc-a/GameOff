@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
 			currentLevel = -1;
 			return;
 		}
+		QuickBuck.triggered = false;
 		currentLevel = levelId;
 		PlayerClass.instance.transform.position = new Vector3();
 		generator.GenerateLevel(dungeon, currentLevel);

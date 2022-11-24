@@ -145,7 +145,12 @@ public class EnemyClass : MonoBehaviour
     }
 
     public virtual void OnDie() {
-        for (int i = 0; i < COIN_DROP; i++)
+        int numberToDrop = COIN_DROP;
+        if(PlayerClass.instance.inventory.HasItem<QuickBuck>() && !QuickBuck.triggered){
+            numberToDrop *= Mathf.CeilToInt(QuickBuck.multiplier);
+            QuickBuck.triggered = true;
+        }
+        for (int i = 0; i < numberToDrop; i++)
         {
             Vector3 randomPos = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
             GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
