@@ -9,6 +9,10 @@ public class RoomPrefab : MonoBehaviour {
 	public Vector3 displacement;
 	public Quaternion rotation;
 
+	public List<EnemyClass> enemies;
+
+	bool visited = false;
+
 	public Rect[] GetBoundingBoxes(Vector3 displacement, Quaternion rotation) {
 		this.displacement = displacement;
 		this.rotation = rotation;
@@ -36,16 +40,35 @@ public class RoomPrefab : MonoBehaviour {
 
 	public virtual void Init(int seed) {
 		System.Random rng = new System.Random(seed);
+		enemies = new List<EnemyClass>();
 
 		if(layouts.Length == 0) return;
 		GameObject layout = layouts[rng.Next()%layouts.Length];
 		GameObject spawned = GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
 		foreach(Transform t in spawned.GetComponentsInChildren<Transform>()) {
 			if(t == spawned.transform) continue;
+			EnemyClass enemy = t.GetComponent<EnemyClass>();
+			if(enemy != null) enemies.Add(enemy);
+
 			t.parent = GameManager.instance.transform;
 			t.rotation = Quaternion.identity;
 		}
 		Destroy(spawned);
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if(other.GetComponent<PlayerClass>() != null) {
+			if(!visited) {
+				if(PlayerClass.instance.inventory.HasItem<RunForYourMoney>())
+					PlayerClass.instance.inventory.AddMoney(RunForYourMoney.amountGiven);
+				visited = true;
+			}
+
+			foreach (EnemyClass enemy in enemies)
+			{
+				enemy.state = EnemyClass.MOVE_FLAG.MOVE;
+			}
+		}
 	}
 }
 
