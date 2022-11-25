@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public class Inventory : MonoBehaviour {
 	public SpriteRenderer weaponRenderer;
@@ -29,6 +31,7 @@ public class Inventory : MonoBehaviour {
 	public void SetWeapon(Weapon weapon) {
 		this.weapon = weapon;
 		weaponRenderer.sprite = weapon.displaySprite;
+		weapon.Init();
 	}
 
 	public void AddObtainable(Obtainable o) {
@@ -62,6 +65,11 @@ public class Inventory : MonoBehaviour {
 		{
 			item.OnBulletHit(position);
 		}
+	}
+
+	public void Update()
+	{
+		weapon.Update();
 	}
 
 }

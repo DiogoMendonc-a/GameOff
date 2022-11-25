@@ -145,19 +145,17 @@ public class PlayerClass : MonoBehaviour
         }
         
         // Disparar 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            GameObject bullet = GameObject.Instantiate(bullet_obj, transform.position, Quaternion.identity);
             
-
-            Vector3 mouse_cords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mouse_cords = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             Vector2 dir = Vector2.zero;
             dir.x = mouse_cords.x;
             dir.y = mouse_cords.y;
             if(inventory.HasItem<HorsingAround>()) {
                 dir = ERandom.GetRandomPlanarVector();
             }
-            bullet.GetComponent<BulletClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-dir,10);
+            
             
             inventory.weapon.TryShoot(transform.position,dir);
             

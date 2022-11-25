@@ -4,7 +4,7 @@ public class BulletClass : MonoBehaviour
 {
     
     public float DMG_DEAL_MULTIPLIER;
-    public int DURATION = 100;
+    public float DURATION = 100;
     public float SPEED = 0;
 
     private Vector2 direction;
@@ -21,7 +21,7 @@ public class BulletClass : MonoBehaviour
         }
     }
     
-    public void Criator(float dmg,int duration, Vector2 dir, float _speed)
+    public void Criator(float dmg,float duration, Vector2 dir, float _speed)
     {
         DMG_DEAL_MULTIPLIER = dmg;
         DURATION = duration;
@@ -39,14 +39,14 @@ public class BulletClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DURATION == 0)
+        if (DURATION <= 0)
         {
             Destroy(gameObject);
         }
 
-        rb.velocity = -direction.normalized * SPEED;
+        rb.velocity = direction.normalized * SPEED;
         Debug.Log("rb: " + rb.velocity);
-        DURATION -= 1;
+        DURATION -= Time.deltaTime;
     }
 
     void OnDestroy() {
