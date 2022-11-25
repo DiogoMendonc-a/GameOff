@@ -15,6 +15,7 @@ public class PlayerClass : MonoBehaviour
     public float DMG_DEAL_MULTIPLIER = 1.0f;
     public float DMG_RECEIVE_MULTIPLIER = 1.0f;
     public float BULLET_RANGE_MULTIPLIER = 1.0f;
+    public float BULLET_SPEED_MULTIPLIER = 1.0f;
     public float FIRE_RATE_MULTIPLIER = 1.0f;
     public float CLIP_SIZE_MODIFIER = 1.0f;
     public float MERCHANT_PRICES_MODIFIER = 1.0f;

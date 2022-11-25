@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47231810884eb44d99c0dc1c665f85f, type: 3}
-  m_Name: SurvivalOfTheFittest
+  m_Script: {fileID: 11500000, guid: 0a00c40a71b395b4a8ce9e6e9f39982f, type: 3}
+  m_Name: StraightAndNarrow
   m_EditorClassIdentifier: 
-  title: Survival of the Fittest
-  description: Heal whenever you kill an enemy
+  title: Straight and Narrow
+  description: Increases bullet range
   basePrice: 0
-  sprite: {fileID: 21300000, guid: 323cbd69a07e0dc4b842295dae0d6d48, type: 3}
-  amount: 15
+  sprite: {fileID: 21300000, guid: c55895db1b3e61e4daadbbed57ed5c6f, type: 3}
+  rangeIncrease: 2
