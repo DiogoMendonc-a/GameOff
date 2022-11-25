@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Weapon : Obtainable {
+	public Sprite displaySprite;
 	public int baseClipSize;
 	int currentClip;
 	public float reloadTime;

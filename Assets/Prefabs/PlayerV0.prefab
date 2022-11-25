@@ -122,8 +122,10 @@ MonoBehaviour:
   DMG_DEAL_MULTIPLIER: 1
   DMG_RECEIVE_MULTIPLIER: 1
   BULLET_RANGE_MULTIPLIER: 1
+  BULLET_SPEED_MULTIPLIER: 1
   FIRE_RATE_MULTIPLIER: 1
   CLIP_SIZE_MODIFIER: 1
+  MERCHANT_PRICES_MODIFIER: 1
   animator: {fileID: 0}
   rb: {fileID: 0}
   bullet_obj: {fileID: 0}
@@ -192,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a7e85452aa9f24a9a04654169c5993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponRenderer: {fileID: 1919065883373025674}
 --- !u!96 &3364047125708272729
 TrailRenderer:
   serializedVersion: 2
@@ -311,7 +314,7 @@ GameObject:
   - component: {fileID: 1919065883373025677}
   - component: {fileID: 1919065883373025674}
   m_Layer: 0
-  m_Name: ThisIsNotACliche
+  m_Name: WeaponRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

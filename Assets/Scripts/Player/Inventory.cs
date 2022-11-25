@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour {
+	public SpriteRenderer weaponRenderer;
+
 	public int money { private set; get; }
 
 	public List<Item> itens { private set; get; }
@@ -25,7 +27,8 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void SetWeapon(Weapon weapon) {
-		//TODO
+		this.weapon = weapon;
+		weaponRenderer.sprite = weapon.displaySprite;
 	}
 
 	public void AddObtainable(Obtainable o) {
