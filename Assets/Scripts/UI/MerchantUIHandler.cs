@@ -35,6 +35,11 @@ public class MerchantUIHandler : MonoBehaviour
         item.description.text = obtainable.description;
         item.price.text = obtainable.basePrice.ToString() + " G";
         item.button.interactable = true;
+
+        Weapon w = obtainable as Weapon;
+		if(w != null && PlayerClass.instance.inventory.HasItem<StickToYourGun>()) {
+			item.button.interactable = false;
+		}
     }
 
     public void SetObtainables(Obtainable o0, Obtainable o1, Obtainable o2) {
