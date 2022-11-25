@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a7e85452aa9f24a9a04654169c5993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponRenderer: {fileID: 1919065883373025674}
 --- !u!96 &3364047125708272729
 TrailRenderer:
   serializedVersion: 2
@@ -313,7 +314,7 @@ GameObject:
   - component: {fileID: 1919065883373025677}
   - component: {fileID: 1919065883373025674}
   m_Layer: 0
-  m_Name: ThisIsNotACliche
+  m_Name: WeaponRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
