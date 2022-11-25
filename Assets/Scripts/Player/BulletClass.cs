@@ -45,6 +45,7 @@ public class BulletClass : MonoBehaviour
         }
 
         rb.velocity = -direction.normalized * SPEED;
+        Debug.Log("rb: " + rb.velocity);
         DURATION -= 1;
     }
 

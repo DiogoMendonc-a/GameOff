@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c2c2d65a2067f41b6dc4a06eb36d3b, type: 3}
   m_Name: ShoestringBudget
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Shoestring Budget
+  description: 'Reduces Clipp Size.
+
+    Get a discount at merchants.'
   basePrice: 0
   sprite: {fileID: 0}
-  priceReduction: 0
-  clipReduction: 0
+  priceReduction: 0.9
+  clipReduction: 0.7
