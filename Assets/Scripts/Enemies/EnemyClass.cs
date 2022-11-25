@@ -145,6 +145,11 @@ public class EnemyClass : MonoBehaviour
     }
 
     public virtual void OnDie() {
+        if(PlayerClass.instance.inventory.HasItem<SurvivalOfTheFittest>()) {
+            PlayerClass.instance.ChangeHp(SurvivalOfTheFittest.healAmount);
+        }
+
+
         int numberToDrop = COIN_DROP;
         if(PlayerClass.instance.inventory.HasItem<QuickBuck>() && !QuickBuck.triggered){
             numberToDrop *= Mathf.CeilToInt(QuickBuck.multiplier);
