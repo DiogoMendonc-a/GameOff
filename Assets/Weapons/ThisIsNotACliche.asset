@@ -15,6 +15,12 @@ MonoBehaviour:
   title: 
   description: 
   basePrice: 0
-  sprite: {fileID: 0}
-  baseClipSize: 0
-  reloadTime: 0
+  sprite: {fileID: 21300000, guid: 3a72de96f07735a47b10774bf22e5f5c, type: 3}
+  displaySprite: {fileID: 21300000, guid: 3a72de96f07735a47b10774bf22e5f5c, type: 3}
+  bullet: {fileID: 7631464070027159791, guid: 216db23d351fbaf49887da3762f6f538, type: 3}
+  baseClipSize: 5
+  reloadTime: 1.5
+  fireRate: 5
+  range: 3
+  bullet_speed: 5
+  base_damage: 5

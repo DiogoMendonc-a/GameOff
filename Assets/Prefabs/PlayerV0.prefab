@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  default_weapon: {fileID: 11400000, guid: 3501f920eced3934f979412343c2674b, type: 2}
   MAX_HP: 100
   CURRENT_HP: 0
   MOV_SPEED: 4

@@ -157,7 +157,7 @@ public class PlayerClass : MonoBehaviour
             }
             
             
-            inventory.weapon.TryShoot(transform.position,dir);
+            inventory.weapon.TryShoot(inventory.weaponRenderer.transform.position, dir);
             
         }
         

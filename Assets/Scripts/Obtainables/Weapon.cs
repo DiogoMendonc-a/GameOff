@@ -1,26 +1,52 @@
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class Weapon : Obtainable {
 	public Sprite displaySprite;
 	public GameObject bullet;
+
 	public int baseClipSize;
-	[HideInInspector]
-	public int currentClip;
+
+	protected int currentClip;
+
 	public float reloadTime;
-	[HideInInspector]
-	public float timeToReload;
+	private bool reloading; 
+	protected float timeToReload;
+
 	public float fireRate;
+	protected float cooldown;
+
 	public float range;
 	public float bullet_speed;
+	public float base_damage;
 
+	public void Init()
+	{
+		currentClip = baseClipSize;
+		reloading = false;
+		timeToReload = 0;
+		cooldown = 0;
+	}
 
-	private bool reloading = false; 
+	protected virtual void Shoot(Vector3 position, Vector3 direction) {}
 
-	public virtual void TryShoot(Vector3 position, Vector3 direction) {}
+	public virtual void TryShoot(Vector3 position, Vector3 direction) {
+		 if (timeToReload <= 0 && currentClip > 0 && cooldown <= 0)
+        {
+            Shoot(position, direction);
+			cooldown = 1.0f / (fireRate * PlayerClass.instance.FIRE_RATE_MULTIPLIER);
+			currentClip -= 1;
+        }
+        else if (currentClip <= 0)
+        {
+            ReloadStart();
+        }
+	}
 
 	public virtual void Update()
 	{
+		if(cooldown > 0) {
+			cooldown -= Time.deltaTime;
+		}
 		if (reloading)
 		{
 			timeToReload -= Time.deltaTime;
@@ -50,11 +76,6 @@ public class Weapon : Obtainable {
 		currentClip = Mathf.CeilToInt(baseClipSize * PlayerClass.instance.CLIP_SIZE_MODIFIER);
 		Debug.Log(currentClip);
 		reloading = false;
-	}
-	
-	public void Init()
-	{
-		currentClip = baseClipSize;
 	}
 	
 }
