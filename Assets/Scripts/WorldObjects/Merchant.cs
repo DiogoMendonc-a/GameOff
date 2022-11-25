@@ -6,6 +6,7 @@ public class Merchant : Interactable, IGeneratable
 {
     bool[] selling = { false, false, false };
     Obtainable[] stock = { null, null, null };
+	public int[] price = { 0, 0, 0 };
 
     void IGeneratable.Generate(int seed) {
         System.Random rng = new System.Random(seed);
@@ -13,6 +14,8 @@ public class Merchant : Interactable, IGeneratable
         {
             selling[i] = true;
             stock[i] = LootManager.instance.GetLoot(rng.Next());
+            float modifier = rng.Next(75, 150) / 100.0f;
+			price[i] = Mathf.FloorToInt(stock[i].basePrice * modifier * PlayerClass.instance.MERCHANT_PRICES_MODIFIER);
         }
     }
 
