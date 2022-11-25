@@ -8,6 +8,8 @@ public class PlayerClass : MonoBehaviour
     [HideInInspector]
     public Inventory inventory;
 
+    public Weapon default_weapon;
+    
     public float MAX_HP = 100.0f;
     public float CURRENT_HP;
     public float MOV_SPEED = 1.0f;
@@ -48,6 +50,7 @@ public class PlayerClass : MonoBehaviour
         inventory = GetComponent<Inventory>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        inventory.SetWeapon(default_weapon);
     }
 
     public void ChangeHp(int value) {
@@ -155,6 +158,9 @@ public class PlayerClass : MonoBehaviour
                 dir = ERandom.GetRandomPlanarVector();
             }
             bullet.GetComponent<BulletClass>().Criator(DMG_DEAL_MULTIPLIER,1000,-dir,10);
+            
+            inventory.weapon.TryShoot(transform.position,dir);
+            
         }
         
         // Dash

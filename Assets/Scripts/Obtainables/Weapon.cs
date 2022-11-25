@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Weapon : Obtainable {
 	public int baseClipSize;
-	int currentClip;
+	[HideInInspector]
+	public int currentClip;
 	public float reloadTime;
-	float timeToReload;
+	[HideInInspector]
+	public float timeToReload;
+	public float fireRate;
 	public virtual void TryShoot(Vector3 position, Vector3 direction) {}
-
+	
 	public virtual void ReloadStart() {
 		timeToReload = reloadTime;
 		if(PlayerClass.instance.inventory.HasItem<PullAFastOne>()) {

@@ -122,11 +122,13 @@ MonoBehaviour:
   DMG_DEAL_MULTIPLIER: 1
   DMG_RECEIVE_MULTIPLIER: 1
   BULLET_RANGE_MULTIPLIER: 1
+  BULLET_SPEED_MULTIPLIER: 1
   FIRE_RATE_MULTIPLIER: 1
   CLIP_SIZE_MODIFIER: 1
+  MERCHANT_PRICES_MODIFIER: 1
   animator: {fileID: 0}
   rb: {fileID: 0}
-  bullet_obj: {fileID: 0}
+  bullet_obj: {fileID: 6576830320644423129, guid: eeb27af01075d2145bfeaaa8358df664, type: 3}
   atack_velocity: 10
   COIN_DROP_MULTIPLIER: 1
   dash_power: 10
