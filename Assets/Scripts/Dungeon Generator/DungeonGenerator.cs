@@ -49,19 +49,6 @@ public class DungeonGenerator : MonoBehaviour{
 		}
 	}	
 
-	void Update() {
-		if(Input.GetKeyDown(KeyCode.G)) { //DEBUG
-			KillAllChildren();
-			DebugGenerate();
-		}	
-	}
-
-	//DEBUG
-	void DebugGenerate() {
-		d = GenerateDungeon(new System.Random().Next());
-		GenerateLevel(d, 0);
-	}
-
 	public Dungeon GenerateDungeon(int seed) {
 		Dungeon dungeon = new Dungeon(seed);
 		System.Random rng = new System.Random(seed);
