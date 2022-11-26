@@ -24,10 +24,6 @@ public class PlayerClass : MonoBehaviour
     
     public Animator animator;
     public Rigidbody2D rb;
-    public GameObject bullet_obj;
-    
-    public float atack_velocity = 10;
-    public int COIN_DROP_MULTIPLIER = 1;
 
     //dash 
     private Vector2 dash_dir;
