@@ -18,10 +18,19 @@ public class InGameUIManager : MonoBehaviour {
 
 	public Image hpBar;
 
+	public GameObject inventoryDisplayer;
+	public GameObject itemDisplayerPrefab;
+	public GameObject tooltip;
 	public GameObject treasureObject;
 	public GameObject merchantObject;
 	Action<bool> treasureCallback;
 	Action<int> merchantCallback;
+
+	public void AddItemDisplay(Item item) {
+		GameObject displayer = Instantiate(itemDisplayerPrefab);
+		displayer.GetComponent<ItemDisplayer>().Set(item, tooltip);
+		displayer.transform.parent = inventoryDisplayer.transform;
+	}
 
 	public void ActivateTreasureUI(Obtainable treasure, Action<bool> treasureCallback) {
 		openMenu = true;

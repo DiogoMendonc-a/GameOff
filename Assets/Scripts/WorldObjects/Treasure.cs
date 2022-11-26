@@ -13,6 +13,7 @@ public class Treasure : Interactable, IGeneratable
     
 	void HandleResponse(bool answer) {
 		if(answer) {
+			PlayerClass.instance.inventory.AddObtainable(item);
 			interactionEnabled = false;
 			Destroy(gameObject);		
 		}

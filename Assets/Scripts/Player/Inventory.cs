@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour {
 	public void AddItem(Item item) {
 		itens.Add(item);
 		item.OnPickUp();
+		InGameUIManager.instance.AddItemDisplay(item);
 	}
 
 	public bool HasItem<T>(){
