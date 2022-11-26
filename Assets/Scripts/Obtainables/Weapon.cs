@@ -27,12 +27,18 @@ public class Weapon : Obtainable {
 		cooldown = 0;
 	}
 
-	protected virtual void Shoot(Vector3 position, Vector3 direction) {}
+	protected virtual void Shoot(Vector3 position, Vector3 direction, float damage) {}
 
 	public virtual void TryShoot(Vector3 position, Vector3 direction) {
 		 if (timeToReload <= 0 && currentClip > 0 && cooldown <= 0)
         {
-            Shoot(position, direction);
+			if(PlayerClass.instance.inventory.HasItem<BottomOfTheBarrel>() && currentClip == 0) {
+				Shoot(position, direction, base_damage * PlayerClass.instance.DMG_DEAL_MULTIPLIER * BottomOfTheBarrel.multiplier);
+			}
+			else {	
+            	Shoot(position, direction, base_damage * PlayerClass.instance.DMG_DEAL_MULTIPLIER);
+			}
+
 			cooldown = 1.0f / (fireRate * PlayerClass.instance.FIRE_RATE_MULTIPLIER);
 			currentClip -= 1;
         }

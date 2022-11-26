@@ -1,6 +1,5 @@
 public class Treasure : Interactable, IGeneratable
 {
-    bool taken = false;
     Obtainable item;
 
     void IGeneratable.Generate(int seed) {
@@ -14,11 +13,8 @@ public class Treasure : Interactable, IGeneratable
     
 	void HandleResponse(bool answer) {
 		if(answer) {
-			interactionEnabled = false;			
-		}
-		else {
-
+			interactionEnabled = false;
+			Destroy(gameObject);		
 		}
 	}
-
 }
