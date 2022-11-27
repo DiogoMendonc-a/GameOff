@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
 	}
 
+	public void ReturnToMenu() {
+		if(currentLevel > -1) generator.DegenerateLevel(dungeon.GetLevel(currentLevel));
+		SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+	}
+
 	public void LoadLevel(int levelId) {
 		if(currentLevel > -1) generator.DegenerateLevel(dungeon.GetLevel(currentLevel));
 		if(levelId >= generator.numberOfLevels) {
@@ -55,11 +60,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoseGame() {
-		//TODO
+		InGameUIManager.instance.ActivateDeathUI();
 	}
 
 	public void WinGame() {
-		Debug.Log("You Won The Game! Congrats");
-		//TODO
+		InGameUIManager.instance.ActivateVictoryUI();
 	}
 }

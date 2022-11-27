@@ -18,6 +18,10 @@ public class BulletClass : MonoBehaviour
         {
             enemie.HP -= 1;
         }
+
+        PlayerClass player = other.GetComponent<PlayerClass>();
+        if(player != null) return;
+        
         PlayerClass.instance.inventory.OnBulletHit(transform.position);
         Destroy(gameObject);
     }

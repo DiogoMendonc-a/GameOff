@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3367303517502974742}
   - component: {fileID: 261824213081212317}
   - component: {fileID: -8041146794752513416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Teste_atack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc8d8c29c1887047a7d403e4000a116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DMG_DEAL_MULTIPLIER: 0
+  DMG_DEAL_MULTIPLIER: 1
   DURATION: 100
   SPEED: 0
   rb: {fileID: 0}

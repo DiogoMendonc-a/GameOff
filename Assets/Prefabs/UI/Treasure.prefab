@@ -188,7 +188,7 @@ MonoBehaviour:
   treasureName: {fileID: 8573315558301827425}
   description: {fileID: 8573315559609977789}
   image: {fileID: 8573315559368769854}
-  accept: {fileID: 0}
+  accept: {fileID: 8573315558234499452}
 --- !u!1 &8573315558234499454
 GameObject:
   m_ObjectHideFlags: 0

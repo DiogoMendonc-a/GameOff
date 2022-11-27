@@ -146,7 +146,7 @@ public class PlayerClass : MonoBehaviour
                 SecondWind.used = true;
             }
             else {
-                Destroy(gameObject);
+                GameManager.instance.LoseGame();
             }
         }
         

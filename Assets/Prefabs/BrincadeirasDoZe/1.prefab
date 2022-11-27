@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MOV_SPEED: 1
-  DMG_DEAL_MULTIPLIER: 1
+  DMG_DEAL_MULTIPLIER: 5
   DMG_RECEIVE_MULTIPLIER: 1
   animator: {fileID: 0}
   rb: {fileID: 0}

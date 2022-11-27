@@ -26,6 +26,8 @@ public class InGameUIManager : MonoBehaviour {
 	public GameObject tooltip;
 	public GameObject treasureObject;
 	public GameObject merchantObject;
+	public GameObject deathObject;
+	public GameObject victoryObject;
 	Action<bool> treasureCallback;
 	Action<int> merchantCallback;
 
@@ -74,6 +76,20 @@ public class InGameUIManager : MonoBehaviour {
 	public void CloseMerchant() {
 		openMenu = false;
 		merchantObject.SetActive(false);
+	}
+
+	public void ActivateDeathUI() {
+		openMenu = true;
+		deathObject.SetActive(true);
+	}
+
+	public void ActivateVictoryUI() {
+		openMenu = true;
+		victoryObject.SetActive(true);
+	}
+
+	public void ReturnToMainMenu() {
+		GameManager.instance.ReturnToMenu();
 	}
 
 }
