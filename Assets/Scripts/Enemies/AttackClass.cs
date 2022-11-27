@@ -21,7 +21,7 @@ public class AttackClass : MonoBehaviour
         PlayerClass player = other.GetComponent<PlayerClass>();
         if (player != null)
         {
-            player.ChangeHp(-50);
+            player.ChangeHp(Mathf.FloorToInt(DMG_DEAL_MULTIPLIER));
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DebugConsole : MonoBehaviour
@@ -72,12 +73,16 @@ public class DebugConsole : MonoBehaviour
         on = !on;
         container.SetActive(on);
         InGameUIManager.instance.openMenu = on;
+        if(on) input_text.ActivateInputField();
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Backslash)) {
             Flip();
+        }
+        if(on && Input.GetKeyDown(KeyCode.Return)) {
+            input_text.ActivateInputField();
         }
     }
 
@@ -93,5 +98,7 @@ public class DebugConsole : MonoBehaviour
         catch (System.Exception e) {
             Output(e.Message);
         }
+
+        input_text.ActivateInputField();
     }
 }

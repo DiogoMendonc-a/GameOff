@@ -19,7 +19,17 @@ public class PlayerClass : MonoBehaviour
     public float BULLET_RANGE_MULTIPLIER = 1.0f;
     public float BULLET_SPEED_MULTIPLIER = 1.0f;
     public float FIRE_RATE_MULTIPLIER = 1.0f;
-    public float CLIP_SIZE_MODIFIER = 1.0f;
+    private float _clip_size_modifier = 1.0f;
+    public float CLIP_SIZE_MODIFIER {
+        get {
+            return _clip_size_modifier;
+        }
+        set {
+            _clip_size_modifier = value;
+            inventory.weapon.UpdateMaxClipSize();
+        }
+    }
+
     public float MERCHANT_PRICES_MODIFIER = 1.0f;
     
     public Animator animator;

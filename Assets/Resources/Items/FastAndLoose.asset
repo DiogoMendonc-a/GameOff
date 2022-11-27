@@ -17,4 +17,4 @@ MonoBehaviour:
   basePrice: 0
   sprite: {fileID: 21300000, guid: 14b642f55923044428c148982c3985fb, type: 3}
   movSpeedIncrease: 10
-  fireRateIncrease: 0.5
+  fireRateIncrease: 2

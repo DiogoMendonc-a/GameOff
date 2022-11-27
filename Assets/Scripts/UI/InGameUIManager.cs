@@ -18,6 +18,9 @@ public class InGameUIManager : MonoBehaviour {
 
 	public Image hpBar;
 
+	public TMPro.TMP_Text clipText;
+	public Image reloadImage;
+
 	public GameObject inventoryDisplayer;
 	public GameObject itemDisplayerPrefab;
 	public GameObject tooltip;
@@ -29,7 +32,19 @@ public class InGameUIManager : MonoBehaviour {
 	public void AddItemDisplay(Item item) {
 		GameObject displayer = Instantiate(itemDisplayerPrefab);
 		displayer.GetComponent<ItemDisplayer>().Set(item, tooltip);
-		displayer.transform.parent = inventoryDisplayer.transform;
+		displayer.transform.SetParent(inventoryDisplayer.transform);
+	}
+
+	public void SetHealth(float fraction) {
+		hpBar.fillAmount = fraction;
+	}
+
+	public void SetClip(int remaining, int max) {
+		clipText.text = remaining + "/" + max;
+	}
+
+	public void SetReloadProgress(float value) {
+		reloadImage.fillAmount = value;
 	}
 
 	public void ActivateTreasureUI(Obtainable treasure, Action<bool> treasureCallback) {
@@ -39,21 +54,17 @@ public class InGameUIManager : MonoBehaviour {
 		this.treasureCallback = treasureCallback;
 	}
 
-	public void ActivateMerchantUI(Obtainable obtainable0, Obtainable obtainable1, Obtainable obtainable2, Action<int> merchantCallback) {
-		openMenu = true;
-		merchantObject.GetComponent<MerchantUIHandler>().SetObtainables(obtainable0, obtainable1, obtainable2);
-		merchantObject.SetActive(true);
-		this.merchantCallback = merchantCallback;
-	}
-
 	public void CloseTreasure(bool taken) {
 		openMenu = false;
 		treasureObject.SetActive(false);
 		treasureCallback.Invoke(taken);
 	}
 
-	public void SetHealth(float fraction) {
-		hpBar.fillAmount = fraction;
+	public void ActivateMerchantUI(Obtainable obtainable0, Obtainable obtainable1, Obtainable obtainable2, Action<int> merchantCallback) {
+		openMenu = true;
+		merchantObject.GetComponent<MerchantUIHandler>().SetObtainables(obtainable0, obtainable1, obtainable2);
+		merchantObject.SetActive(true);
+		this.merchantCallback = merchantCallback;
 	}
 
 	public void Buy(int index) {

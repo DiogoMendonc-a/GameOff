@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: HorsingAround
   m_EditorClassIdentifier: 
   title: Horsing Around
-  description: 'Gigantically Increases Fire Rate
+  description: 'Gigantically Increases Fire Rate and Clip Size
 
-    Bullets are Shot in Random
-    Directions'
+    Bullets are Shot
+    in Random Directions'
   basePrice: 0
   sprite: {fileID: 21300000, guid: 661578e770c8cd442b0d448dacaf304d, type: 3}
+  clipIncrease: 4
   fireRateIncrease: 4

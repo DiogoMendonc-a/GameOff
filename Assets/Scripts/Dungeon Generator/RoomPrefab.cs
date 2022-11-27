@@ -50,7 +50,7 @@ public class RoomPrefab : MonoBehaviour {
 			EnemyClass enemy = t.GetComponent<EnemyClass>();
 			if(enemy != null) enemies.Add(enemy);
 
-			t.parent = GameManager.instance.transform;
+			t.SetParent(GameManager.instance.transform);
 			t.rotation = Quaternion.identity;
 		}
 		Destroy(spawned);

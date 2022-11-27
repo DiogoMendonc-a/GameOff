@@ -17,6 +17,7 @@ public class BulletClass : MonoBehaviour
         if (enemie != null)
         {
             enemie.HP -= 1;
+            PlayerClass.instance.inventory.OnBulletHit(transform.position);
             Destroy(gameObject);
         }
     }
@@ -41,15 +42,11 @@ public class BulletClass : MonoBehaviour
     {
         if (DURATION <= 0)
         {
+            PlayerClass.instance.inventory.OnBulletHit(transform.position);
             Destroy(gameObject);
         }
 
         rb.velocity = direction.normalized * SPEED;
-        Debug.Log("rb: " + rb.velocity);
         DURATION -= Time.deltaTime;
-    }
-
-    void OnDestroy() {
-        PlayerClass.instance.inventory.OnBulletHit(transform.position);
     }
 }

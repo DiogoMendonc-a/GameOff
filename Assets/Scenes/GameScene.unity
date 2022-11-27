@@ -442,10 +442,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5859226709792906286, guid: fd08ac081a3e8d84c9db427c4241ee12, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5859226709964162076, guid: fd08ac081a3e8d84c9db427c4241ee12, type: 3}
       propertyPath: m_Name
       value: UI Container
@@ -533,10 +529,6 @@ PrefabInstance:
     - target: {fileID: 5859226709964162080, guid: fd08ac081a3e8d84c9db427c4241ee12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859226710762871892, guid: fd08ac081a3e8d84c9db427c4241ee12, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.000036239624
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd08ac081a3e8d84c9db427c4241ee12, type: 3}

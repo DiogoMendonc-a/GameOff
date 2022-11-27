@@ -211,7 +211,7 @@ public class DungeonGenerator : MonoBehaviour{
 		GameObject newRoom = GameObject.Instantiate(prefab, position, rotation);
 		RoomPrefab type = newRoom.GetComponent<RoomPrefab>();
 		level.AddRoom(type);
-		newRoom.transform.parent = this.transform;
+		newRoom.transform.SetParent(this.transform);
 		boundingBoxes.AddRange(type.GetBoundingBoxes(position, rotation));
 
 		type.Init(rng.Next());

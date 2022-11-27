@@ -7,6 +7,6 @@ public class SonOfAGun : Item
     public override void OnPickUp()
     {
 		GameObject pal = GameObject.Instantiate(companion, PlayerClass.instance.transform.position, Quaternion.identity);
-		pal.transform.parent = PlayerClass.instance.transform;
+		pal.transform.SetParent(PlayerClass.instance.transform);
     }
 }

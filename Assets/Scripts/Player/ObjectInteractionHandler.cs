@@ -13,7 +13,6 @@ public class ObjectInteractionHandler : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log(other.name);
 		Interactable ii = other.GetComponent<Interactable>();
 		if(ii != null) {
 			if(!interactablesInRange.Contains(ii) && ii.interactionEnabled)
