@@ -42,7 +42,7 @@ public class EnemyClass : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void InitilizeEnemy()
+    protected virtual void InitiliazeEnemy()
     {
         return;
     }
@@ -51,64 +51,11 @@ public class EnemyClass : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        InitilizeEnemy();
+        InitiliazeEnemy();
     }
     
-    
-    // state machine
-    Vector2 StateControler()
-    {
-        if (state == MOVE_FLAG.INACTIVE)
-        {
-            return Vector2.zero;
-        }
-        
-        // Movement
-        if (state == MOVE_FLAG.MOVE)
-        {
-            Vector2 pos = direction - rb.position ;
-            pos = pos.normalized * MOV_SPEED;
-            
-            // Isto serve para ele não andar de um lado para o outro
-            if (Mathf.Abs(pos.x) + Mathf.Abs(pos.y) < 0.8)
-            {
-                return Vector2.zero;
-            }
-            
-            return new Vector2(pos.x,pos.y);
-        }
-
-        if (state == MOVE_FLAG.STATIC)
-        {
-            return Vector2.zero;
-        }
-
-        if (state == MOVE_FLAG.ATACK)
-        {
-            GameObject ataque = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
-            
-            // TO DO : change direction
-            Vector2 rando = new Vector2();
-            rando.x = Random.Range(-10, 10);
-            rando.y = Random.Range(-10, 10);
-            
-            ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,rando,10);
-            state = MOVE_FLAG.MOVE;
-            return Vector2.zero;
-        }
-
-        if (state == MOVE_FLAG.DEFENSE)
-        {
-            return Vector2.zero;
-        }
-
-        return Vector2.zero;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (state != MOVE_FLAG.INACTIVE)
+    protected virtual void UpdateState() {
+        if (state != MOVE_FLAG.INACTIVE && state != MOVE_FLAG.DIE)
         {
             atack_frame_counter += 1;
         }
@@ -123,13 +70,50 @@ public class EnemyClass : MonoBehaviour
         if (HP <= 0)
         {
             state = MOVE_FLAG.DIE;
-            
-            // Need this to not revive;
-            atack_frame_counter = FRAMES_BETWEEN_ATACK + 10;
-            OnDie();
+        }
+    }
+    
+    // state machine
+    void ExecuteState()
+    {
+        if (state == MOVE_FLAG.INACTIVE)
+        {
+            DoInactiveBehaviour();
         }
         
-        rb.velocity = StateControler();
+        if (state == MOVE_FLAG.MOVE)
+        {
+            DoMoveBehaviour();
+        }
+
+        if (state == MOVE_FLAG.STATIC)
+        {
+            DoStaticBehaviour();
+        }
+
+        if (state == MOVE_FLAG.ATACK)
+        {
+            DoAttackBehaviour();
+        }
+
+        if (state == MOVE_FLAG.DEFENSE)
+        {
+            DoDefenseBehaviour();
+        }
+
+        if (state == MOVE_FLAG.DIE)
+        {
+            DoDieBehaviour();
+        }
+    }
+    
+    // Update is called once per frame
+    public virtual void Update()
+    {
+        UpdateState();
+        
+        ExecuteState();
+
         if (rb.velocity.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -140,15 +124,48 @@ public class EnemyClass : MonoBehaviour
         }
     }
 
-    public void DealDamage(int value) {
-        HP -= value;
+    protected virtual void DoInactiveBehaviour() {
+        rb.velocity = Vector2.zero;
     }
 
-    public virtual void OnDie() {
+    protected virtual void DoMoveBehaviour() {
+        Vector2 pos = direction - rb.position ;
+        pos = pos.normalized * MOV_SPEED;
+        
+        // Isto serve para ele não andar de um lado para o outro
+        if (Mathf.Abs(pos.x) + Mathf.Abs(pos.y) < 0.8)
+        {
+            rb.velocity =  Vector2.zero;
+        }
+        
+        rb.velocity =  new Vector2(pos.x,pos.y);
+    }
+
+    protected virtual void DoStaticBehaviour() {
+        rb.velocity = Vector2.zero;
+    }
+
+    protected virtual void DoAttackBehaviour() {
+        GameObject ataque = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
+            
+        // TO DO : change direction
+        Vector2 rando = new Vector2();
+        rando.x = Random.Range(-10, 10);
+        rando.y = Random.Range(-10, 10);
+        
+        ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,rando,10);
+        state = MOVE_FLAG.MOVE;
+        rb.velocity = Vector2.zero;
+    } 
+
+    protected virtual void DoDefenseBehaviour() {
+        rb.velocity = Vector2.zero;
+    }
+
+    protected virtual void DoDieBehaviour() {
         if(PlayerClass.instance.inventory.HasItem<SurvivalOfTheFittest>()) {
             PlayerClass.instance.ChangeHp(SurvivalOfTheFittest.healAmount);
         }
-
 
         int numberToDrop = COIN_DROP;
         if(PlayerClass.instance.inventory.HasItem<QuickBuck>() && !QuickBuck.triggered){
@@ -161,5 +178,9 @@ public class EnemyClass : MonoBehaviour
             GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
         }
         Destroy(gameObject);
+    }
+
+    public void DealDamage(int value) {
+        HP -= value;
     }
 }

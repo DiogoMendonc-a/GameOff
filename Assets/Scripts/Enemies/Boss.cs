@@ -4,9 +4,9 @@ public class Boss : EnemyClass {
 	[HideInInspector]
 	public GameObject nextLevelEntrance;
 
-	public override void OnDie()
+	protected override void DoDieBehaviour()
 	{
-		base.OnDie();
+		base.DoDieBehaviour();
 		nextLevelEntrance.SetActive(true);
 	}
 
