@@ -141,7 +141,7 @@ public class EnemyClass : MonoBehaviour
     }
 
     public void DealDamage(int value) {
-        //TODO
+        HP -= value;
     }
 
     public virtual void OnDie() {

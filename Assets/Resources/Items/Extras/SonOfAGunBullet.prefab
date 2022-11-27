@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4269343705455143016}
   - component: {fileID: -8799774209311977211}
   - component: {fileID: 3165589018675697621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SonOfAGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

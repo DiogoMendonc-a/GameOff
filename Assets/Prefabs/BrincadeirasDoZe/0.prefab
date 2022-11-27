@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6651955633322746499}
   - component: {fileID: 6651955633322746524}
   - component: {fileID: 6651955633322746525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,14 +99,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad5f02f9eb24e746a2370adb3fa7abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  inventory: {fileID: 0}
+  default_weapon: {fileID: 0}
+  MAX_HP: 100
+  CURRENT_HP: 0
   MOV_SPEED: 3.77
   DMG_DEAL_MULTIPLIER: 1
   DMG_RECEIVE_MULTIPLIER: 1
+  BULLET_RANGE_MULTIPLIER: 1
+  BULLET_SPEED_MULTIPLIER: 1
+  FIRE_RATE_MULTIPLIER: 1
+  MERCHANT_PRICES_MODIFIER: 1
   animator: {fileID: 0}
   rb: {fileID: 0}
-  atack_velocity: 10
-  COIN_DROP_MULTIPLIER: 1
+  dash_power: 10
+  dash_time: 0.2
+  dash_cooldown: 1
+  tr: {fileID: 0}
 --- !u!50 &6651955633322746524
 Rigidbody2D:
   serializedVersion: 4

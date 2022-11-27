@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1175568611940041042}
   - component: {fileID: 767360807103172565}
   - component: {fileID: 767360807103172566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LetsSplitBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}

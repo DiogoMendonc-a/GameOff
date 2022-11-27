@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3518734142596820905}
   - component: {fileID: 330830505721970318}
   - component: {fileID: 1069181852512121262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletAtack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

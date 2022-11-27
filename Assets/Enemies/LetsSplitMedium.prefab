@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 952441232638316412}
   - component: {fileID: 1711794172810199547}
   - component: {fileID: 1711794172810199544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LetsSplitMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}

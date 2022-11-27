@@ -17,9 +17,9 @@ public class BulletClass : MonoBehaviour
         if (enemie != null)
         {
             enemie.HP -= 1;
-            PlayerClass.instance.inventory.OnBulletHit(transform.position);
-            Destroy(gameObject);
         }
+        PlayerClass.instance.inventory.OnBulletHit(transform.position);
+        Destroy(gameObject);
     }
     
     public void Criator(float dmg,float duration, Vector2 dir, float _speed)
