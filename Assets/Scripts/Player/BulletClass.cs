@@ -26,12 +26,12 @@ public class BulletClass : MonoBehaviour
         Destroy(gameObject);
     }
     
-    public void Criator(float dmg, float duration, Vector2 dir, float _speed)
+    public void Criator(float dmg, float range, Vector2 dir, float _speed)
     {
         DMG_DEAL_MULTIPLIER = dmg;
-        DURATION = duration * PlayerClass.instance.BULLET_RANGE_MULTIPLIER;
-        direction = dir;
         SPEED = _speed * PlayerClass.instance.BULLET_SPEED_MULTIPLIER;
+        DURATION = (range * PlayerClass.instance.BULLET_RANGE_MULTIPLIER) / SPEED;
+        direction = dir;
     }
     
     // Start is called before the first frame update

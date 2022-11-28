@@ -38,7 +38,7 @@ public class SonOfAGunCompanion : MonoBehaviour {
 		float distance = float.MaxValue;
 		target = null;
 		
-		RaycastHit2D[] hits = Physics2D.CircleCastAll(PlayerClass.instance.transform.position, range, Vector2.up);
+		RaycastHit2D[] hits = Physics2D.CircleCastAll(PlayerClass.instance.transform.position, range * PlayerClass.instance.BULLET_RANGE_MULTIPLIER, Vector2.up);
 		foreach (RaycastHit2D hit in hits)
 		{
 			EnemyClass enemy = hit.collider.gameObject.GetComponent<EnemyClass>();
@@ -71,7 +71,7 @@ public class SonOfAGunCompanion : MonoBehaviour {
 
 		if(stime <= 0) {
 			GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
-			b.GetComponent<BulletClass>().Criator(damage, (int)range, transform.up, bulletSpeed); //TODO: Range should go as float
+			b.GetComponent<BulletClass>().Criator(damage * PlayerClass.instance.DMG_DEAL_MULTIPLIER, range, transform.up, bulletSpeed); //TODO: Range should go as float
 			stime = fireTime;
 		}
 	}
