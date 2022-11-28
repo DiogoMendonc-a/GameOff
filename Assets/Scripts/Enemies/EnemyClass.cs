@@ -48,7 +48,7 @@ public class EnemyClass : MonoBehaviour
         return;
     }
     
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
