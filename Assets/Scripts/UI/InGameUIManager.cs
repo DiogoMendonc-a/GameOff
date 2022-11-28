@@ -21,6 +21,10 @@ public class InGameUIManager : MonoBehaviour {
 	public TMPro.TMP_Text clipText;
 	public Image reloadImage;
 
+	public int currency = 0;
+	public TMPro.TMP_Text currencyUI;
+	public Image currencyImage;
+
 	public GameObject inventoryDisplayer;
 	public GameObject itemDisplayerPrefab;
 	public GameObject tooltip;
@@ -47,6 +51,11 @@ public class InGameUIManager : MonoBehaviour {
 
 	public void SetReloadProgress(float value) {
 		reloadImage.fillAmount = value;
+	}
+
+	public void IncreaseCurrency(int amount) {
+		currency += amount;
+		currencyUI.text = "" + currency;
 	}
 
 	public void ActivateTreasureUI(Obtainable treasure, Action<bool> treasureCallback) {

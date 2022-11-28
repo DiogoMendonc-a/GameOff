@@ -10,6 +10,7 @@ public class Money : MonoBehaviour {
 		if(pc != null) {
 			pc.inventory.AddMoney(value);
 			Destroy(gameObject);
+			InGameUIManager.instance.IncreaseCurrency(value);
 		}
 	}
 
