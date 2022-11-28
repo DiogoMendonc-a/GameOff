@@ -49,8 +49,6 @@ public class PlayerClass : MonoBehaviour
         CURRENT_HP = MAX_HP;
     }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         inventory = GetComponent<Inventory>();
@@ -60,6 +58,9 @@ public class PlayerClass : MonoBehaviour
     }
 
     public void ChangeHp(int value) {
+        if(value < 0) {
+            value = Mathf.FloorToInt(value * DMG_RECEIVE_MULTIPLIER);
+        }
         CURRENT_HP += value;
         CURRENT_HP = Mathf.Clamp(CURRENT_HP, 0, MAX_HP);
 
