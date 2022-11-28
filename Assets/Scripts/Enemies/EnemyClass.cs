@@ -53,6 +53,15 @@ public class EnemyClass : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         InitiliazeEnemy();
     }
+
+    protected virtual void OnReceiveDamage(int value) {
+        state = MOVE_FLAG.MOVE;
+    }
+    
+    public virtual void DealDamage(int value) {
+        HP -= value;
+        OnReceiveDamage(value);
+    }
     
     protected virtual void UpdateState() {
         if (state != MOVE_FLAG.INACTIVE && state != MOVE_FLAG.DIE)
@@ -116,11 +125,11 @@ public class EnemyClass : MonoBehaviour
 
         if (rb.velocity.x < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         if (rb.velocity.x > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
         }
     }
 
@@ -178,9 +187,5 @@ public class EnemyClass : MonoBehaviour
             GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
         }
         Destroy(gameObject);
-    }
-
-    public void DealDamage(int value) {
-        HP -= value;
     }
 }
