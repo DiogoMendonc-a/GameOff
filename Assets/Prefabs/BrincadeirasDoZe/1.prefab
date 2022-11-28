@@ -125,6 +125,7 @@ MonoBehaviour:
   DMG_DEAL_MULTIPLIER: 5
   DMG_RECEIVE_MULTIPLIER: 1
   animator: {fileID: 0}
+  sr: {fileID: 3443058115377379239}
   rb: {fileID: 0}
   ataque_obj: {fileID: 1567430453297477411, guid: 400c46d6db8f71c48a98fc558316f628, type: 3}
   atack_frame_counter: 0

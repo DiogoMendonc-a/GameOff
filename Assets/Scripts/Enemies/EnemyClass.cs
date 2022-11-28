@@ -10,6 +10,7 @@ public class EnemyClass : MonoBehaviour
     public float DMG_RECEIVE_MULTIPLIER = 1.0f;
 
     public Animator animator;
+    public SpriteRenderer sr;
     public Rigidbody2D rb;
     public GameObject ataque_obj;
 
@@ -125,11 +126,11 @@ public class EnemyClass : MonoBehaviour
 
         if (rb.velocity.x < 0)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = true;
+            sr.flipX = true;
         }
         if (rb.velocity.x > 0)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = false;
+            sr.flipX = false;
         }
     }
 
