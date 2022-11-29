@@ -49,7 +49,7 @@ public class AttackClass : MonoBehaviour
             Destroy(gameObject);
         }
 
-        rb.velocity = -direction.normalized * SPEED;
+        rb.velocity = direction.normalized * SPEED;
         DURATION -= 1;
     }
 }

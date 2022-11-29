@@ -10,7 +10,7 @@ public class LetsSplitBehaviour : EnemyClass
 	public float windDownTime = 0.25f; 
 	public float timeMoves = 0.75f; 
 	public float movement_time = 0.6333f;
-	public float attack_range = 2;
+	public float attack_range = 1;
 	public int attack_damage;
 	public int touch_damage;
 	int current_damage;
@@ -24,6 +24,7 @@ public class LetsSplitBehaviour : EnemyClass
 			return;
 		}
 		if(state == MOVE_FLAG.MOVE) {
+			Vector3 r1 = Vector3.zero;
 			if(Vector3.Distance(PlayerClass.instance.transform.position, transform.position) < attack_range) {
 				state = MOVE_FLAG.ATACK;
 				return;
@@ -43,7 +44,8 @@ public class LetsSplitBehaviour : EnemyClass
 		}
 		else if(t < windUpTime + timeMoves) {
 			current_damage = attack_damage;
-			if(direction == null || direction == Vector2.zero) {
+			if(direction == null || direction == Vector2.zero)
+			{
 				direction = PlayerClass.instance.transform.position - transform.position;
 			}
 			rb.velocity = direction.normalized * attack_velocity;

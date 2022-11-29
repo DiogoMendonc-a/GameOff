@@ -7,6 +7,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -58,6 +66,8 @@
       <workItem from="1668182647889" duration="1658000" />
       <workItem from="1668877524805" duration="4006000" />
       <workItem from="1669395189952" duration="5235000" />
+      <workItem from="1669668938213" duration="596000" />
+      <workItem from="1669740649795" duration="6373000" />
     </task>
     <servers />
   </component>

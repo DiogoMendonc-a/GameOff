@@ -88,7 +88,7 @@ MonoBehaviour:
   windDownTime: 0.25
   timeMoves: 0.75
   movement_time: 0.6333
-  attack_range: 4
+  attack_range: 2
   attack_damage: 8
   touch_damage: 4
 --- !u!61 &1711794172810199547
