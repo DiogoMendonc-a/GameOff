@@ -48,16 +48,12 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void AddMoney(int value, bool skipEvents = false) {
-		if(!skipEvents) {
+		if(!skipEvents && value > 0) {
 			foreach (Item item in itens)
 			{
 				item.OnGetMoney(value);
 			}
 		}
-		money += value;
-	}
-
-	public void RemoveMoney(int value) {
 		money += value;
 	}
 

@@ -14,6 +14,12 @@ public class DebugConsole : MonoBehaviour
     List<string> outputs;
     int max_outputs = 30;
 
+    void AddMoney(string value) {
+        int amount = int.Parse(value);
+        PlayerClass.instance.inventory.AddMoney(amount);
+        Output("Added " + amount + " money to inventory");
+    }
+
     void AddItem(string item_code) {
         Item item = Resources.Load("Items/" + item_code) as Item;
         if(item == null) {
@@ -39,6 +45,9 @@ public class DebugConsole : MonoBehaviour
                 break;
             case "set_weapon":
                 SetWeapon(fields[1]);
+                break;
+            case "add_money":
+                AddMoney(fields[1]);
                 break;
             default:
                 Output("Unrecognized command");

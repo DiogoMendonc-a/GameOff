@@ -132,7 +132,7 @@ MonoBehaviour:
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}
   atack_velocity: 10
-  COIN_DROP: 0
+  COIN_DROP: 5
   state: 0
 --- !u!61 &3443058115377379258
 BoxCollider2D:
