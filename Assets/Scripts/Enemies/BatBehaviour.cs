@@ -7,7 +7,6 @@ public class BatBehaviour : EnemyClass
     public float attack_velocity;
     public float move_time;
     public int damage;
-    float r = 0;
     float a = 0;
 
     Vector3 target;

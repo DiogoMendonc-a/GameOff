@@ -7,12 +7,11 @@ public class BulletClass : MonoBehaviour
     public float DURATION = 100;
     public float SPEED = 0;
 
-    private Vector2 direction;
+    protected Vector2 direction;
     public Rigidbody2D rb;
     public Animator animator;
     
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    protected virtual void HandleCollision(Collider2D other) {
         EnemyClass enemie = other.GetComponent<EnemyClass>();
         if (enemie != null)
         {
@@ -24,6 +23,12 @@ public class BulletClass : MonoBehaviour
         
         PlayerClass.instance.inventory.OnBulletHit(transform.position);
         Destroy(gameObject);
+      
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        HandleCollision(other);
     }
     
     public void Criator(float dmg, float range, Vector2 dir, float _speed)

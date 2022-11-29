@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8544488745250417583}
   - component: {fileID: 1583777247338074115}
-  - component: {fileID: 3518734142596820905}
   - component: {fileID: 330830505721970318}
   - component: {fileID: 1069181852512121262}
+  - component: {fileID: -7695881390965212309}
+  - component: {fileID: -6572126961670407129}
   m_Layer: 8
   m_Name: Gumbullet
   m_TagString: Untagged
@@ -87,23 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3518734142596820905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631464070027159791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752b4b2f02d81e146b2907555bfd89a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DMG_DEAL_MULTIPLIER: 0
-  DURATION: 100
-  SPEED: 0
-  rb: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!50 &330830505721970318
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +107,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1069181852512121262
 BoxCollider2D:
@@ -151,3 +135,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &-7695881390965212309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631464070027159791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f14185117deab4683a376f5f252164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DMG_DEAL_MULTIPLIER: 0
+  DURATION: 100
+  SPEED: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 128
+  maxBounceNumber: 50
+--- !u!58 &-6572126961670407129
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631464070027159791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125

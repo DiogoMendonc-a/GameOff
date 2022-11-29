@@ -22,7 +22,7 @@ MonoBehaviour:
   reloadTime: 5
   fireRate: 100
   range: 1.5
-  bullet_speed: 11
+  bullet_speed: 5
   base_damage: 0.02
   bullet_number: 10
   arc: 60
