@@ -13,6 +13,7 @@ public class StoneThrower : EnemyClass
     public float MAX_TIMER_ATACK;
     public bool taking_dmg = false;
     public float fsolong = 1.3f;
+    private bool help = true;
     
     
     protected override void UpdateState()
@@ -72,16 +73,22 @@ public class StoneThrower : EnemyClass
             rb.velocity = Vector2.zero;
         }
     }
-    
-    
-    protected override void DoAttackBehaviour()
+
+        public override void ReceiveDMG()
+        {
+            state = MOVE_FLAG.TAKE_DMG;
+        }
+
+        protected override void DoAttackBehaviour()
     {
 
-        if (Random.Range(0,2) > 0.4)
+        if (Random.Range(0,2) > 2.8 && help)
         {
             DoCure();
             return;
         }
+
+        help = false;
         
         if(t_atack == 0) {
             animator.CrossFade("Stone_Atack", 0, 0, 0);
@@ -98,6 +105,7 @@ public class StoneThrower : EnemyClass
             rb.velocity = Vector2.zero;
         }
         else {
+            Debug.Log("AQUI");
             GameObject ataque = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
             GameObject ataque2 = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
             GameObject ataque3 = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
@@ -123,6 +131,8 @@ public class StoneThrower : EnemyClass
             ataque5.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,3000,PlayerClass.instance.transform.position - transform.position,4);
             state = MOVE_FLAG.MOVE;
             rb.velocity = Vector2.zero;
+            help = true;
+            Debug.Log("AQUII");
         }
     }
     

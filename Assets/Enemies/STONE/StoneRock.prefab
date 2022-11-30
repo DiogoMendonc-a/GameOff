@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2865202793315613405}
   - component: {fileID: 149349097902550185}
   - component: {fileID: 2777212740555516955}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: StoneRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DMG_DEAL_MULTIPLIER: 1
   DURATION: 100
-  SPEED: 0
+  SPEED: 10
   rb: {fileID: 0}
   animator: {fileID: 0}
 --- !u!61 &149349097902550185
