@@ -21,8 +21,6 @@ public class DungeonGenerator : MonoBehaviour{
 	public GameObject[] bossRooms;
 	List<GameObject> bossRoomsRemaining;
 	List<GameObject> requiredRoomsRemaining;
-
-	Dungeon d; //DEBUG
 	
 	List<Rect> boundingBoxes;
 
@@ -35,11 +33,6 @@ public class DungeonGenerator : MonoBehaviour{
 			Quaternion.Euler(0, 0, 180),
 			Quaternion.Euler(0, 0, -90),
 		};
-	}
-
-	void Start() {
-		
-		//DebugGenerate(); //DEBUG
 	}
 
 	void KillAllChildren() {
@@ -174,7 +167,7 @@ public class DungeonGenerator : MonoBehaviour{
 		if(value < onceRoomChance && onceRoomsRemaining.Count > 0) {
 			return onceRoomsRemaining[rng.Next()%onceRoomsRemaining.Count];
 		}
-		if(value < onceRoomChance * 2 && requiredRoomsRemaining.Count > 0) {
+		if(value < onceRoomChance && requiredRoomsRemaining.Count > 0) {
 			return requiredRoomsRemaining[rng.Next()%requiredRoomsRemaining.Count];
 		}
 		return prefabs[rng.Next() % prefabs.Length];
@@ -235,17 +228,15 @@ public class DungeonGenerator : MonoBehaviour{
 
 		GameObject requiredRoom = requiredRoomsRemaining[rng.Next()%requiredRoomsRemaining.Count];
 		RoomPrefab roomType = requiredRoom.GetComponent<RoomPrefab>();
-		
 		foreach (RoomPrefab room in level.rooms)
 		{
 			foreach (GameObject exit in room.entrances)
 			{
 				if(AttemptSpawnRoom(rng, level, exit, 200, roomType, requiredRoom)) {
+					GenerateRequiredRooms(level);
 					return;
 				}
 			}
 		}
-		
-		GenerateRequiredRooms(level);
 	}
 }
