@@ -68,7 +68,8 @@ public class EnemyClass : MonoBehaviour
 
     public virtual void ReceiveDMG()
     {
-        state = MOVE_FLAG.TAKE_DMG;
+        return;
+        //state = MOVE_FLAG.TAKE_DMG;
     }
     
     protected virtual void UpdateState() {
