@@ -17,7 +17,7 @@ MonoBehaviour:
 
     Increases damage dealt, bullet range,
     and fire rate'
-  basePrice: 0
+  basePrice: 200
   sprite: {fileID: 21300000, guid: f8a11e460b19a8d4c8c27d7f88af7b5b, type: 3}
   damageIncrease: 1.5
   rangeIncrease: 1.5

@@ -142,7 +142,7 @@ public class PlayerClass : MonoBehaviour
         {
             if(PlayerClass.instance.inventory.HasItem<SecondWind>() && !SecondWind.used) {
                 MAX_HP = MAX_HP * SecondWind.percentage;
-                CURRENT_HP = MAX_HP * SecondWind.percentage;
+                CURRENT_HP = MAX_HP;
                 InGameUIManager.instance.SetHealth(CURRENT_HP/MAX_HP);
                 SecondWind.used = true;
             }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Second Wind
   description: When you die, revives you with half maximum hp. Works only once.
-  basePrice: 0
+  basePrice: 500
   sprite: {fileID: 21300000, guid: d9d429e44f6cad74fa8907dfdebd1fa7, type: 3}
   modifier: 0.5

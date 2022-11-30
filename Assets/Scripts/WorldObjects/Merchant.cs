@@ -26,7 +26,7 @@ public class Merchant : Interactable, IGeneratable
 		if(selling[1]) o1 = stock[1];
 		Obtainable o2 = null;
 		if(selling[2]) o2 = stock[2];
-		InGameUIManager.instance.ActivateMerchantUI(o0, o1, o2, HandleResponse);
+		InGameUIManager.instance.ActivateMerchantUI(o0, o1, o2, price, HandleResponse);
 	}
 
     public override void Activate() {
@@ -34,7 +34,9 @@ public class Merchant : Interactable, IGeneratable
     }
     
     void HandleResponse(int answer) {
+        if(PlayerClass.instance.inventory.money < price[answer]) return;
         PlayerClass.instance.inventory.AddObtainable(stock[answer]);
+        PlayerClass.instance.inventory.AddMoney(-price[answer]);
 		selling[answer] = false;
 		CallUI();
 	}

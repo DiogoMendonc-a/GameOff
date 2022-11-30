@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Small World
   description: Increases bullet range and speed
-  basePrice: 0
+  basePrice: 110
   sprite: {fileID: 21300000, guid: 51dc29332c69e0446999e2aa90c00ada, type: 3}
   rangeIncrease: 1.5
   speedIncrease: 1.5

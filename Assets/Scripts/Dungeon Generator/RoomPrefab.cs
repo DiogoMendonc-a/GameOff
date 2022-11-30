@@ -43,16 +43,26 @@ public class RoomPrefab : MonoBehaviour {
 		enemies = new List<EnemyClass>();
 
 		if(layouts.Length == 0) return;
+
 		GameObject layout = layouts[rng.Next()%layouts.Length];
 		GameObject spawned = GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
-		foreach(Transform t in spawned.GetComponentsInChildren<Transform>()) {
+		
+		List<Transform> children = new List<Transform>();
+		
+		for(int i = 0; i < spawned.transform.childCount; i++) {
+			Transform t = spawned.transform.GetChild(i);
 			if(t == spawned.transform) continue;
 			EnemyClass enemy = t.GetComponent<EnemyClass>();
 			if(enemy != null) enemies.Add(enemy);
 
-			t.SetParent(GameManager.instance.transform);
-			t.rotation = Quaternion.identity;
+			children.Add(t);
 		}
+		foreach (Transform child in children)
+		{
+			child.SetParent(GameManager.instance.transform);
+			child.rotation = Quaternion.identity;			
+		}
+
 		Destroy(spawned);
 	}
 

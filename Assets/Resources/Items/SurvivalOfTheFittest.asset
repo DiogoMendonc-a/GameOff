@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Survival of the Fittest
   description: Heal whenever you kill an enemy
-  basePrice: 0
+  basePrice: 400
   sprite: {fileID: 21300000, guid: 323cbd69a07e0dc4b842295dae0d6d48, type: 3}
   amount: 15

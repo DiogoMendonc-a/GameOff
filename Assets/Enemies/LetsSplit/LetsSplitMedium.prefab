@@ -81,7 +81,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   atack_velocity: 10
   COIN_DROP: 0
-  state: 2
+  state: 0
   child: {fileID: 1711794172810199524, guid: 75f5586c0ca92f544ac8a6883ae17a24, type: 3}
   attack_velocity: 7
   windUpTime: 0.333

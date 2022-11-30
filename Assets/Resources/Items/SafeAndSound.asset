@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Safe and Sound
   description: Raises Max HP and Defense
-  basePrice: 0
+  basePrice: 150
   sprite: {fileID: 21300000, guid: 7c748a5c39f0ae1418d5295155bdff45, type: 3}
   MaxHpIncrease: 50
   damageReduction: 0.7

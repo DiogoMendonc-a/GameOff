@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Scot Free
   description: Increses Movement Speed and Defense
-  basePrice: 0
+  basePrice: 150
   sprite: {fileID: 21300000, guid: 765a23c6dfd130c48a15511a25b48cee, type: 3}
-  movSpeedIncrease: 1
+  movSpeedIncrease: 1.2
   damageReduction: 0.8

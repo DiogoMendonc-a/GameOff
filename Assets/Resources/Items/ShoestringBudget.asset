@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 'Reduces Clipp Size.
 
     Get a discount at merchants.'
-  basePrice: 0
-  sprite: {fileID: 0}
+  basePrice: 160
+  sprite: {fileID: 21300000, guid: ebe87f73ae0ee954dba8b385ceb93a2c, type: 3}
   priceReduction: 0.9
   clipReduction: 0.7

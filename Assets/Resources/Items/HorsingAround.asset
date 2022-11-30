@@ -17,7 +17,7 @@ MonoBehaviour:
 
     Bullets are Shot
     in Random Directions'
-  basePrice: 0
+  basePrice: 600
   sprite: {fileID: 21300000, guid: 661578e770c8cd442b0d448dacaf304d, type: 3}
   clipIncrease: 4
   fireRateIncrease: 4

@@ -24,7 +24,8 @@ public class MerchantUIManagerDebugger : MonoBehaviour {
 		if(selling[1]) o1 = LootManager.instance.GetLoot(0);
 		Obtainable o2 = null;
 		if(selling[2]) o2 = LootManager.instance.GetLoot(0);
-		InGameUIManager.instance.ActivateMerchantUI(o0, o1, o2, HandleResponse);
+		Debug.LogWarning("Not implemented");
+		//InGameUIManager.instance.ActivateMerchantUI(o0, o1, o2, HandleResponse);
 	}
 
 	void HandleResponse(int answer) {

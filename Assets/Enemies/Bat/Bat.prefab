@@ -230,7 +230,7 @@ MonoBehaviour:
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}
   atack_velocity: 10
-  COIN_DROP: 0
+  COIN_DROP: 10
   state: 0
   circleRange: 3
   move_velocity: 3

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Blood Money
   description: Deals damage in area when you pick up money
-  baseValue: 200
+  basePrice: 300
   sprite: {fileID: 21300000, guid: 0f1e4d82616964048958481ced675151, type: 3}
   range: 5
   damage: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Fast And Loose
   description: Increases Movement Speed and Fire Rate
-  basePrice: 0
+  basePrice: 250
   sprite: {fileID: 21300000, guid: 14b642f55923044428c148982c3985fb, type: 3}
   movSpeedIncrease: 1.5
   fireRateIncrease: 2

@@ -648,7 +648,13 @@ MonoBehaviour:
   - {fileID: 5056583768756920224}
   - {fileID: 3558802798508080453}
   - {fileID: 423635678649782124}
-  layouts: []
+  layouts:
+  - {fileID: 7731021459774473996, guid: 8a7f6aa159e816f48acf28c7c74367aa, type: 3}
+  - {fileID: 3578811917688321648, guid: 49b75d08166bb5f439c54ac3bd6dfc61, type: 3}
+  - {fileID: 1837099943807553723, guid: 2a7953ef42ba0454caff009c21cdda47, type: 3}
+  - {fileID: 7221771004216150286, guid: b29a232980da6b440b2a31f12491c204, type: 3}
+  - {fileID: 8319153573037232148, guid: aa8150c481733c44e85229d4c7cebf1b, type: 3}
+  - {fileID: 1242031834708201842, guid: 0ad6d8b4f7f6d314a9e5d8bc678ecbb0, type: 3}
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   enemies: []

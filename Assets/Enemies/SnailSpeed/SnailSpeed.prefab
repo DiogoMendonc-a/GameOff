@@ -179,7 +179,7 @@ MonoBehaviour:
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}
   atack_velocity: 10
-  COIN_DROP: 0
+  COIN_DROP: 7
   state: 0
   TIMER_ATACK: 1
   MAX_TIMER_ATACK: 1

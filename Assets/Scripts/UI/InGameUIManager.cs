@@ -21,9 +21,7 @@ public class InGameUIManager : MonoBehaviour {
 	public TMPro.TMP_Text clipText;
 	public Image reloadImage;
 
-	public int currency = 0;
 	public TMPro.TMP_Text currencyUI;
-	public Image currencyImage;
 
 	public GameObject inventoryDisplayer;
 	public GameObject itemDisplayerPrefab;
@@ -53,9 +51,8 @@ public class InGameUIManager : MonoBehaviour {
 		reloadImage.fillAmount = value;
 	}
 
-	public void IncreaseCurrency(int amount) {
-		currency += amount;
-		currencyUI.text = "" + currency;
+	public void DisplayCurrency(int amount) {
+		currencyUI.text = "" + amount;
 	}
 
 	public void ActivateTreasureUI(Obtainable treasure, Action<bool> treasureCallback) {
@@ -71,9 +68,9 @@ public class InGameUIManager : MonoBehaviour {
 		treasureCallback.Invoke(taken);
 	}
 
-	public void ActivateMerchantUI(Obtainable obtainable0, Obtainable obtainable1, Obtainable obtainable2, Action<int> merchantCallback) {
+	public void ActivateMerchantUI(Obtainable obtainable0, Obtainable obtainable1, Obtainable obtainable2, int[] prices, Action<int> merchantCallback) {
 		openMenu = true;
-		merchantObject.GetComponent<MerchantUIHandler>().SetObtainables(obtainable0, obtainable1, obtainable2);
+		merchantObject.GetComponent<MerchantUIHandler>().SetObtainables(obtainable0, obtainable1, obtainable2, prices);
 		merchantObject.SetActive(true);
 		this.merchantCallback = merchantCallback;
 	}

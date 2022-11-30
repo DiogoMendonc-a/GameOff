@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 
   description: 
-  basePrice: 0
+  basePrice: 300
   sprite: {fileID: 21300000, guid: 809405951b0d5c043b098e7a8da2ed99, type: 3}
   displaySprite: {fileID: 21300000, guid: 0b0c58c97cfb65b439e9e15d9149948c, type: 3}
   bullet: {fileID: 7631464070027159791, guid: bd330800f44cf22408bc31407692af6a, type: 3}

@@ -29,11 +29,11 @@ public class MerchantUIHandler : MonoBehaviour
         item.button.interactable = false;
     }
 
-    void SetItem(MerchantItem item, Obtainable obtainable) {
+    void SetItem(MerchantItem item, Obtainable obtainable, int price) {
         item.title.text = obtainable.title;
         item.image.sprite = obtainable.sprite;
         item.description.text = obtainable.description;
-        item.price.text = obtainable.basePrice.ToString() + " G";
+        item.price.text = price.ToString() + " G";
         item.button.interactable = true;
 
         Weapon w = obtainable as Weapon;
@@ -42,26 +42,26 @@ public class MerchantUIHandler : MonoBehaviour
 		}
     }
 
-    public void SetObtainables(Obtainable o0, Obtainable o1, Obtainable o2) {
+    public void SetObtainables(Obtainable o0, Obtainable o1, Obtainable o2, int[] prices) {
         if(o0 == null) {
             SetEmpty(item0);
         }
         else {
-            SetItem(item0, o0);
+            SetItem(item0, o0, prices[0]);
         }
 
         if(o1 == null) {
             SetEmpty(item1);
         }
         else {
-            SetItem(item1, o1);
+            SetItem(item1, o1, prices[1]);
         }
 
         if(o2 == null) {
             SetEmpty(item2);
         }
         else {
-            SetItem(item2, o2);
+            SetItem(item2, o2, prices[2]);
         }
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 'Increases Damage Dealt
 
     Decreases Maximum HP'
-  basePrice: 0
+  basePrice: 230
   sprite: {fileID: 21300000, guid: 5d9ff73028d2859418c6aa084a0500d3, type: 3}
   damageIncrease: 1
   hpDecrease: 50

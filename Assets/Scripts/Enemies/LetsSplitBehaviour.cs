@@ -17,6 +17,10 @@ public class LetsSplitBehaviour : EnemyClass
 	float t_move = 0;
 	float t = 0;
 
+	public void Activate() {
+		state = MOVE_FLAG.MOVE;
+	}
+
 	protected override void UpdateState()
 	{
 		if(HP <= 0) {
@@ -87,8 +91,10 @@ public class LetsSplitBehaviour : EnemyClass
 	{
 		base.DoDieBehaviour();
         if(child == null) return;
-        GameObject.Instantiate(child, this.transform.position, Quaternion.identity);
-        GameObject.Instantiate(child, this.transform.position, Quaternion.identity);
+        GameObject x = GameObject.Instantiate(child, this.transform.position, Quaternion.identity);
+        GameObject y = GameObject.Instantiate(child, this.transform.position, Quaternion.identity);
+		x.GetComponent<LetsSplitBehaviour>().Activate();
+		y.GetComponent<LetsSplitBehaviour>().Activate();
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {

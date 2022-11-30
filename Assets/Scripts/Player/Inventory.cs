@@ -55,6 +55,7 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 		money += value;
+		InGameUIManager.instance.DisplayCurrency(money);
 	}
 
 	public void OnBulletHit(Vector3 position) {
