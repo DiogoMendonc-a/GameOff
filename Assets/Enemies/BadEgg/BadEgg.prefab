@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2557235585850840187}
   - component: {fileID: 2557235585850840164}
   m_Layer: 9
-  m_Name: SnailSpeed
+  m_Name: BadEgg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17cf3ba861416b440997249f2e307156, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f14008fd565b5c4184cdac467afd9f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2557235585850840160}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2d7c305719329a341b64fc27f5f6221e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63fb964edfa6b3b479255b3963a95ebf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7bcfdc39a7f0d49bec0c3d5246c7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   HP: 100
   MOV_SPEED: 0.1
   DMG_DEAL_MULTIPLIER: 10
@@ -174,7 +175,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   sr: {fileID: 2557235585850840166}
   rb: {fileID: 0}
-  ataque_obj: {fileID: 6238743115277343343, guid: 01e28e68eac23724f9b072d9ca74e6f1, type: 3}
+  ataque_obj: {fileID: 4958017358235346204, guid: 0c6a3bf596e646b489cb960d4e267b1f, type: 3}
   atack_frame_counter: 0
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}

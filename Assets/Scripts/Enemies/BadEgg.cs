@@ -31,7 +31,7 @@ public class BadEgg : EnemyClass
     protected override void DoAttackBehaviour()
     {
         if(t_atack == 0) {
-            animator.CrossFade("EggAtack", 0, 0, 0);
+            animator.CrossFade("Egg_Atack", 0, 0, 0);
         }
         t_atack += Time.deltaTime;
         if(t_atack < movement_time) {
@@ -53,7 +53,7 @@ public class BadEgg : EnemyClass
     protected override void DoMoveBehaviour()
     {
         if(t_move == 0) {
-            animator.CrossFade("EggWalk", 0, 0, 0);
+            animator.CrossFade("Egg_Walk", 0, 0, 0);
         }
         t_move += Time.deltaTime;
         if(t_move < movement_time) {

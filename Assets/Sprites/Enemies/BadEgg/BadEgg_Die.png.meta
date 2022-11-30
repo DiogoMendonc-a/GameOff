@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 0
@@ -102,7 +102,532 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BadEgg_Die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 153.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceed67e4a49d6964b9b77459a70d366b
+      internalID: -253818213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 153.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119ac4f8a1b962945be190dfe752286c
+      internalID: -1451881304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 153.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4651ee0115e5bb4f93fd55143d1fce0
+      internalID: -10653647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 153.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6ec333922805044bfe4d6d69d20324
+      internalID: 886299111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 153.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f91a96b7cc99044f9cb45cda52970bb
+      internalID: -96401289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea70649343b8394c883c41d9b7099dc
+      internalID: -50245343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 115.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bbe0258a76536419c710eb2238c78c
+      internalID: 1644933083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 115.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af69e84f711d5f45b7c31bbca6862a1
+      internalID: -1111471583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 115.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7209b8a4e689cfc42b3b676de01c1b45
+      internalID: -18046903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 115.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e3c77b4389fc549a3ed5c9a0298735
+      internalID: -587569802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 77.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccdd399ac4900042bd8d357606a60b5
+      internalID: 1609332014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 77.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ef90b5ec90362448d37e37d9a3c78e
+      internalID: 1872113569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 77.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9c10f90fe5515498fc99f9c65fe130
+      internalID: 1992927912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 77.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677cb39437aea64408d1ed20664f85dd
+      internalID: 2117519347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 77.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0872dc28af2068a43b573dec7bed632a
+      internalID: -397067334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0597f63e28dd48641b3e23ba15ad231a
+      internalID: 147744462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cda67e0fd889e04c8702d067f67fbec
+      internalID: -1990396191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 39.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a4d2ddc8573324ea8d169eb54caf24
+      internalID: -917625950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 39.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321bf82af5152fc43afdb057e8019e2c
+      internalID: 1759977681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 39.6
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d45ecd7825de4f4c9268a22c4c3a2b4
+      internalID: -1824028670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5999985
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c185ea5834783d438e2844217989c36
+      internalID: 1946508884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1.5999985
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e4d1a9b2d976546a52074e5ad90343
+      internalID: 698370726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1.5999985
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517a3e3445fe0774db125e8aa5189483
+      internalID: -1107951530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1.5999985
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43bc2c012188ba4b9c0d6dabcc630d4
+      internalID: -543839983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEgg_Die_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1.5999985
+        width: 32
+        height: 38.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639ef6db985dc9640bcd5758abe6dc8b
+      internalID: 1803460997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -113,7 +638,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BadEgg_Die_13: 2117519347
+      BadEgg_Die_23: -543839983
+      BadEgg_Die_21: 698370726
+      BadEgg_Die_11: 1872113569
+      BadEgg_Die_9: -587569802
+      BadEgg_Die_4: -96401289
+      BadEgg_Die_17: -917625950
+      BadEgg_Die_16: -1990396191
+      BadEgg_Die_19: -1824028670
+      BadEgg_Die_6: 1644933083
+      BadEgg_Die_8: -18046903
+      BadEgg_Die_10: 1609332014
+      BadEgg_Die_1: -1451881304
+      BadEgg_Die_0: -253818213
+      BadEgg_Die_3: 886299111
+      BadEgg_Die_22: -1107951530
+      BadEgg_Die_20: 1946508884
+      BadEgg_Die_7: -1111471583
+      BadEgg_Die_5: -50245343
+      BadEgg_Die_12: 1992927912
+      BadEgg_Die_14: -397067334
+      BadEgg_Die_2: -10653647
+      BadEgg_Die_18: 1759977681
+      BadEgg_Die_15: 147744462
+      BadEgg_Die_24: 1803460997
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
