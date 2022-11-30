@@ -16,6 +16,7 @@ public class BulletClass : MonoBehaviour
         if (enemie != null)
         {
             enemie.DealDamage(Mathf.CeilToInt(DMG_DEAL_MULTIPLIER));
+            enemie.ReceiveDMG();
         }
 
         PlayerClass player = other.GetComponent<PlayerClass>();

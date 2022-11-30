@@ -45,7 +45,7 @@ public class SnailSpeed : EnemyClass
         }
         else {
             GameObject ataque = GameObject.Instantiate(ataque_obj, transform.position, Quaternion.identity);
-            ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,PlayerClass.instance.transform.position - transform.position,10);
+            ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,PlayerClass.instance.transform.position - transform.position,2);
             state = MOVE_FLAG.MOVE;
             rb.velocity = Vector2.zero;
         }
@@ -76,6 +76,7 @@ public class SnailSpeed : EnemyClass
         if (player != null)
         {
             player.ChangeHp(-Mathf.FloorToInt(suicide_dmg));
+            HP = -1;
         }
     }
     

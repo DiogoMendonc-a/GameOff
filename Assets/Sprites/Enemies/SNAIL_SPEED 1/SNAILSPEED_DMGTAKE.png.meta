@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3d3ea7e6352cfe4490847b3fe295403
+guid: 125cee2f67a20c74fa79eda82f2faf9a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 0
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: STA_HEAL_UP_0
+      name: SNAILSPEED_DMGTAKE_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
-        width: 128
-        height: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9c79e8cb9d1e5a44b697906a3cd2b2a
-      internalID: -231048838
+      spriteID: 1603583be295c7149933c1104b0b19bc
+      internalID: 1144621266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_1
+      name: SNAILSPEED_DMGTAKE_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d8bb89db6b910409d83cd54486e491
-      internalID: -1561301664
+      spriteID: 71c38e7193b189b4cac8822910b17afa
+      internalID: 114142735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_2
+      name: SNAILSPEED_DMGTAKE_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,83 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6281ca4de10481f4cb196f260ff1fb4d
-      internalID: -2091719700
+      spriteID: 2371fc844b35bc84899a38f33ca24f2f
+      internalID: 644693605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b36f6c61c505ff4d8896bba3a65d2f7
-      internalID: -907401324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STA_HEAL_UP_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e50d4316e2c5e1340bbe91e74afd5435
-      internalID: 75708092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STA_HEAL_UP_5
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72f4ba1f41a51bf4abc351720c032163
-      internalID: 1606326917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STA_HEAL_UP_6
+      name: SNAILSPEED_DMGTAKE_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 128
-        height: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88bba98de34e34468fc705f37c642eb
-      internalID: 14806966
+      spriteID: 716de6ea973b3d646ad6eecff9a7239f
+      internalID: 1915926019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_7
+      name: SNAILSPEED_DMGTAKE_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 983e4b95729d19d47b85e66e53779771
-      internalID: 1973892940
+      spriteID: 9562d3e8ed9f95c4ea409bb070a846d8
+      internalID: -1106323974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_8
+      name: SNAILSPEED_DMGTAKE_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 833b7bb19886a0540abdf96211b8e6a7
-      internalID: -300845944
+      spriteID: 9d433f69dc04687499130d4d8076cebd
+      internalID: 2054742773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STA_HEAL_UP_9
+      name: SNAILSPEED_DMGTAKE_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,29 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0584c6ca3ac5ce4ebf9448fd609de67
-      internalID: -1195996456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STA_HEAL_UP_10
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64ba33dac7f8ba0459cafb219a7d8fcd
-      internalID: -857336966
+      spriteID: 7159fd28ca7d8cb489c456856e9caa88
+      internalID: 481913089
       vertices: []
       indices: 
       edges: []
@@ -345,17 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      STA_HEAL_UP_4: 75708092
-      STA_HEAL_UP_9: -1195996456
-      STA_HEAL_UP_1: -1561301664
-      STA_HEAL_UP_3: -907401324
-      STA_HEAL_UP_2: -2091719700
-      STA_HEAL_UP_8: -300845944
-      STA_HEAL_UP_6: 14806966
-      STA_HEAL_UP_7: 1973892940
-      STA_HEAL_UP_10: -857336966
-      STA_HEAL_UP_5: 1606326917
-      STA_HEAL_UP_0: -231048838
+      SNAILSPEED_DMGTAKE_4: -1106323974
+      SNAILSPEED_DMGTAKE_0: 1144621266
+      SNAILSPEED_DMGTAKE_2: 644693605
+      SNAILSPEED_DMGTAKE_1: 114142735
+      SNAILSPEED_DMGTAKE_5: 2054742773
+      SNAILSPEED_DMGTAKE_3: 1915926019
+      SNAILSPEED_DMGTAKE_6: 481913089
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

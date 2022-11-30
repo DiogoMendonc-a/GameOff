@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyClass : MonoBehaviour
 {
-
+    public bool dead = false;
     public float HP = 100.0f;
     public float MOV_SPEED = 1.0f;
     
@@ -35,7 +35,8 @@ public class EnemyClass : MonoBehaviour
         MOVE,
         ATACK,
         DEFENSE,
-        DIE
+        DIE,
+        TAKE_DMG
     }
 
     public MOVE_FLAG state = MOVE_FLAG.INACTIVE;
@@ -55,13 +56,18 @@ public class EnemyClass : MonoBehaviour
         InitiliazeEnemy();
     }
 
-    protected virtual void OnReceiveDamage(int value) {
+    public virtual void OnReceiveDamage(int value) {
         state = MOVE_FLAG.MOVE;
     }
     
     public virtual void DealDamage(int value) {
         HP -= value;
         OnReceiveDamage(value);
+    }
+
+    public virtual void ReceiveDMG()
+    {
+        state = MOVE_FLAG.TAKE_DMG;
     }
     
     protected virtual void UpdateState() {
@@ -113,8 +119,19 @@ public class EnemyClass : MonoBehaviour
 
         if (state == MOVE_FLAG.DIE)
         {
+            DieAnimation();
+        }
+
+        if (dead)
+        {
             DoDieBehaviour();
         }
+        
+    }
+
+    public virtual void DieAnimation()
+    {
+        dead = true;
     }
     
     // Update is called once per frame
