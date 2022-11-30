@@ -9,9 +9,10 @@ public class BouncingBullet : BulletClass
 
     private void OnCollisionEnter2D(Collision2D other) {
         bounces++;
-        Debug.Log(other.contacts[0].normal);
+        Vector2 old_dir = direction;
+        if(Vector3.Dot(direction, other.contacts[0].normal) >= 0) return;
         direction = Vector2.Reflect(direction, other.contacts[0].normal);
-
+        Debug.Log(old_dir + " | " + other.contacts[0].normal + " | " + direction);
         if(bounces >= maxBounceNumber) {
             PlayerClass.instance.inventory.OnBulletHit(transform.position);
             Destroy(gameObject);

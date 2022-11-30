@@ -24,6 +24,10 @@ public class AttackClass : MonoBehaviour
             player.ChangeHp(-Mathf.FloorToInt(DMG_DEAL_MULTIPLIER));
             Destroy(gameObject);
         }
+        EnemyClass enemie = other.GetComponent<EnemyClass>();
+        if (enemie != null) return;
+
+        Destroy(gameObject);
     }
     
     public void Create(float dmg,int duration, Vector2 dir, float _speed)
