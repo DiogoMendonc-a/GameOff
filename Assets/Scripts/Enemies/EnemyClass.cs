@@ -57,7 +57,8 @@ public class EnemyClass : MonoBehaviour
     }
 
     public virtual void OnReceiveDamage(int value) {
-        state = MOVE_FLAG.MOVE;
+        if(state == MOVE_FLAG.INACTIVE)
+            state = MOVE_FLAG.MOVE;
     }
     
     public virtual void DealDamage(int value) {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6234051547377844010}
   - component: {fileID: 7719729338468387746}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 203647180543364879}
   - component: {fileID: 4987600699009376048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 4397800469743243605}
   - component: {fileID: 4397800469743243604}
   - component: {fileID: 3183771486864763602}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d90554c9d303843bc08eb7d3709216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   HP: 100
   MOV_SPEED: 1
   DMG_DEAL_MULTIPLIER: 1
@@ -304,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6563137668724865462}
   - component: {fileID: 8126302083350027435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
