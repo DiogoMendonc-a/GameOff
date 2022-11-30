@@ -12,7 +12,6 @@ public class RoomPrefab : MonoBehaviour {
 	public List<EnemyClass> enemies;
 
 	bool visited = false;
-
 	public Rect[] GetBoundingBoxes(Vector3 displacement, Quaternion rotation) {
 		this.displacement = displacement;
 		this.rotation = rotation;
@@ -46,7 +45,7 @@ public class RoomPrefab : MonoBehaviour {
 
 		GameObject layout = layouts[rng.Next()%layouts.Length];
 		GameObject spawned = GameObject.Instantiate(layout, this.transform.position, this.transform.rotation);
-		
+
 		List<Transform> children = new List<Transform>();
 		
 		for(int i = 0; i < spawned.transform.childCount; i++) {

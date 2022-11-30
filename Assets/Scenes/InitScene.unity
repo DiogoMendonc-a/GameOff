@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: onceRoomChance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: prefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2084610305466235164, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
       propertyPath: m_RootOrder
       value: 0

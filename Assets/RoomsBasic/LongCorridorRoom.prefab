@@ -524,7 +524,11 @@ MonoBehaviour:
   entrances:
   - {fileID: 556596489577660451}
   - {fileID: 4610499044751085189}
-  layouts: []
+  layouts:
+  - {fileID: 5934294325763598391, guid: 9a4f6f4d80564944baa7586158783973, type: 3}
+  - {fileID: 8417388006328328427, guid: 566f0333beb095c4ebb3f387197e9b48, type: 3}
+  - {fileID: 4052156788316970526, guid: 5cf1ba77414ef9441beb7c6e061a6693, type: 3}
+  - {fileID: 8314472391934989373, guid: 81e295ea91c4d5948a0e7831685b04fc, type: 3}
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   enemies: []

@@ -649,7 +649,16 @@ MonoBehaviour:
   - {fileID: 7509963152269977466}
   - {fileID: 6081990119461251873}
   layouts:
-  - {fileID: 349640069809976341, guid: 5b878b91eda481b419cccf093fdf9fc9, type: 3}
+  - {fileID: 7731021459774473996, guid: 8a7f6aa159e816f48acf28c7c74367aa, type: 3}
+  - {fileID: 3578811917688321648, guid: 49b75d08166bb5f439c54ac3bd6dfc61, type: 3}
+  - {fileID: 1837099943807553723, guid: 2a7953ef42ba0454caff009c21cdda47, type: 3}
+  - {fileID: 7221771004216150286, guid: b29a232980da6b440b2a31f12491c204, type: 3}
+  - {fileID: 8319153573037232148, guid: aa8150c481733c44e85229d4c7cebf1b, type: 3}
+  - {fileID: 1242031834708201842, guid: 0ad6d8b4f7f6d314a9e5d8bc678ecbb0, type: 3}
+  - {fileID: 2559427742677905052, guid: fdc60c3e152d687499a7a3dc43683461, type: 3}
+  - {fileID: 7616420109834080923, guid: b918aa87e96aee449ab00f52bcd2dbbe, type: 3}
+  - {fileID: 3900864588320076231, guid: a231002e570d1844d9245b5cb6622ecf, type: 3}
+  - {fileID: 5336444176567975101, guid: 350c9ccf71a68ce4abe17829d69a0263, type: 3}
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   enemies: []
