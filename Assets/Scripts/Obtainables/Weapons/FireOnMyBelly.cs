@@ -12,7 +12,8 @@ public class FireOnMyBelly : Weapon
 			float angle = Random.Range(-(arc * PlayerClass.instance.BULLET_RANGE_MULTIPLIER)/2, (arc * PlayerClass.instance.BULLET_RANGE_MULTIPLIER)/2);
 			Vector3 bullet_direction = Quaternion.AngleAxis(angle, Vector3.forward) * direction;
 			GameObject bullet_obj = GameObject.Instantiate(bullet, position, Quaternion.identity);
-			bullet_obj.GetComponent<BulletClass>().Criator(damage, range, bullet_direction, bullet_speed);
+			float new_range = Random.Range(0, range);
+			bullet_obj.GetComponent<BulletClass>().Criator(damage, new_range, bullet_direction, bullet_speed);
 		}
     }
 }

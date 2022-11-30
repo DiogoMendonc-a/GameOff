@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8544488745250417583}
   - component: {fileID: 1583777247338074115}
-  - component: {fileID: 3518734142596820905}
   - component: {fileID: 330830505721970318}
   - component: {fileID: 1069181852512121262}
+  - component: {fileID: 3508363190299891471}
+  - component: {fileID: -8181066003106942933}
   m_Layer: 8
   m_Name: IceBreaker
   m_TagString: Untagged
@@ -84,26 +85,9 @@ SpriteRenderer:
   m_Size: {x: 22.030304, y: 11.359375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3518734142596820905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631464070027159791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752b4b2f02d81e146b2907555bfd89a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DMG_DEAL_MULTIPLIER: 0
-  DURATION: 100
-  SPEED: 0
-  rb: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!50 &330830505721970318
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +135,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &3508363190299891471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631464070027159791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b277e6306959f4ca29c0ba721188c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DMG_DEAL_MULTIPLIER: 0
+  DURATION: 100
+  SPEED: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  timeToLay: 10
+--- !u!114 &-8181066003106942933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631464070027159791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2a228d55a69b748aff98b939ed7a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 876468014, guid: 67e73ac9b222ea44e86e725fc6ad7b95, type: 3}
+  - {fileID: -918994371, guid: 67e73ac9b222ea44e86e725fc6ad7b95, type: 3}
+  - {fileID: 571461656, guid: 67e73ac9b222ea44e86e725fc6ad7b95, type: 3}
+  - {fileID: -1118088751, guid: 67e73ac9b222ea44e86e725fc6ad7b95, type: 3}
