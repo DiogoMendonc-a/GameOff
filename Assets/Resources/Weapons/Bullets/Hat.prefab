@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8544488745250417583}
   - component: {fileID: 1583777247338074115}
-  - component: {fileID: 3518734142596820905}
   - component: {fileID: 330830505721970318}
   - component: {fileID: 1069181852512121262}
+  - component: {fileID: 2116242821764371085}
   m_Layer: 8
   m_Name: Hat
   m_TagString: Untagged
@@ -87,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3518734142596820905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631464070027159791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752b4b2f02d81e146b2907555bfd89a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DMG_DEAL_MULTIPLIER: 0
-  DURATION: 100
-  SPEED: 0
-  rb: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!50 &330830505721970318
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +134,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &2116242821764371085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631464070027159791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94e6c028980fdf4cafe657ea16d79d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DMG_DEAL_MULTIPLIER: 0
+  DURATION: 100
+  SPEED: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  returnDamageModifier: 2

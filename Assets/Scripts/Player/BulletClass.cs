@@ -46,9 +46,7 @@ public class BulletClass : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    protected virtual void DoMovement() {
         if (DURATION <= 0)
         {
             PlayerClass.instance.inventory.OnBulletHit(transform.position);
@@ -57,5 +55,9 @@ public class BulletClass : MonoBehaviour
 
         rb.velocity = direction.normalized * SPEED;
         DURATION -= Time.deltaTime;
+    }
+
+    private void Update() {
+        DoMovement();    
     }
 }
