@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d21f6ece3b46479f0c328f8c6007e0, type: 3}
-  m_Name: New TMP Color Gradient
+  m_Name: Game title
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 1, g: 1, b: 1, a: 1}
-  topRight: {r: 1, g: 1, b: 1, a: 1}
+  topLeft: {r: 0.6037736, g: 0.5952296, b: 0.5952296, a: 1}
+  topRight: {r: 0.6039216, g: 0.59607846, b: 0.59607846, a: 1}
   bottomLeft: {r: 1, g: 1, b: 1, a: 1}
   bottomRight: {r: 1, g: 1, b: 1, a: 1}
