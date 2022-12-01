@@ -711,9 +711,12 @@ MonoBehaviour:
   - {fileID: 448162221726352231}
   - {fileID: 9217121876059345590}
   - {fileID: 4519595446606590515}
-  layouts_level1: []
-  layouts_level2: []
-  layouts_level3: []
+  layouts_level1:
+  - {fileID: 2841727938723017775, guid: 5c51fb324be67d14082478a113d2ca5e, type: 3}
+  layouts_level2:
+  - {fileID: 7271102427804005218, guid: 0b2e1a997d102dd4cb39bec958df7112, type: 3}
+  layouts_level3:
+  - {fileID: 2719323580734931858, guid: f01126802dbaa3f41ba8ec2a1d6f202e, type: 3}
   displacement: {x: 30.250124, y: 2.2500124, z: 0}
   rotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
   enemies: []
