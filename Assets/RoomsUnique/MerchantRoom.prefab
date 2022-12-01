@@ -590,7 +590,11 @@ MonoBehaviour:
   - {fileID: 4639656157840007989}
   - {fileID: 7509963152269977466}
   - {fileID: 6081990119461251873}
-  layouts:
+  layouts_level1:
+  - {fileID: 1995605759902387400, guid: 1ddc215386f554f4daa3d2ce3c3ae680, type: 3}
+  layouts_level2:
+  - {fileID: 1995605759902387400, guid: 1ddc215386f554f4daa3d2ce3c3ae680, type: 3}
+  layouts_level3:
   - {fileID: 1995605759902387400, guid: 1ddc215386f554f4daa3d2ce3c3ae680, type: 3}
   displacement: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
