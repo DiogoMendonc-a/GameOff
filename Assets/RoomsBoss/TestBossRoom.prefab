@@ -711,12 +711,11 @@ MonoBehaviour:
   - {fileID: 448162221726352231}
   - {fileID: 9217121876059345590}
   - {fileID: 4519595446606590515}
-  layouts_level1:
-  - {fileID: 3972584486324722444, guid: 58492ecff4017dc4f9250c02e881252b, type: 3}
+  layouts_level1: []
   layouts_level2: []
   layouts_level3: []
-  displacement: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  displacement: {x: 30.250124, y: 2.2500124, z: 0}
+  rotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
   enemies: []
   nextLevelDoor: {fileID: 9122972490081865634}
 --- !u!61 &8957256923312529168
