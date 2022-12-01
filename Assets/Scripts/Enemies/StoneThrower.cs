@@ -14,10 +14,12 @@ public class StoneThrower : Boss
     public bool taking_dmg = false;
     public float fsolong = 1.3f;
     private bool help = true;
+    public float invencibility = 0;
     
     
     protected override void UpdateState()
     {
+        invencibility -= Time.deltaTime;
         if (taking_dmg)
         {
             fsolong -= Time.deltaTime;
@@ -76,7 +78,13 @@ public class StoneThrower : Boss
 
         public override void ReceiveDMG()
         {
-            state = MOVE_FLAG.TAKE_DMG;
+            if (invencibility <= 0)
+            {
+                state = MOVE_FLAG.TAKE_DMG;
+                invencibility = 10;
+            }
+
+
         }
 
         protected override void DoAttackBehaviour()
