@@ -230,5 +230,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8687284086171891849, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: lootTable.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687284086171891849, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: lootTable.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: fbc03d571e8b84841939214b2abe642e, type: 2}
+    - target: {fileID: 8687284086171891849, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: lootTable.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ba637c4bccc9124b9988b9ffcbf5ac0, type: 2}
+    - target: {fileID: 8687284086171891849, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: lootTable.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: 96e2b84e2624c1b4fbf7b7b5ca77d598, type: 2}
+    - target: {fileID: 8687284086171891849, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: lootTable.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4dd2b2a6bc078464681d2bc69a7bf49c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}

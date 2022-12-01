@@ -13,11 +13,11 @@ public class InGameUIManager : MonoBehaviour {
 		}
 		instance = this;
 	}
-
 	public bool openMenu = false;
 
 	public Image hpBar;
 
+	public TMPro.TMP_Text seedText;
 	public TMPro.TMP_Text clipText;
 	public Image reloadImage;
 
@@ -32,6 +32,10 @@ public class InGameUIManager : MonoBehaviour {
 	public GameObject victoryObject;
 	Action<bool> treasureCallback;
 	Action<int> merchantCallback;
+
+	void Start() {
+		seedText.text = GameManager.instance.currentMasterSeed.ToString();
+	}
 
 	public void AddItemDisplay(Item item) {
 		GameObject displayer = Instantiate(itemDisplayerPrefab);

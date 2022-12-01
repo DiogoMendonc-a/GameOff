@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	Dungeon dungeon;
 
 	public int currentLevel { get; private set; }
+	public int currentMasterSeed;
 
 	private void Awake() {
 		if(instance != null) {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void GenerateNewDungeon(int seed) {
+		currentMasterSeed = seed;
 		dungeon = generator.GenerateDungeon(seed);
 	}
 
@@ -35,8 +37,8 @@ public class GameManager : MonoBehaviour {
 		GenerateNewDungeon(new System.Random().Next());
 	}
 
-	public void StartNewGame() {
-		GenerateNewDungeon();
+	public void StartNewGame(int seed) {
+		GenerateNewDungeon(seed);
 		currentLevel = 0;
 		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
 	}
