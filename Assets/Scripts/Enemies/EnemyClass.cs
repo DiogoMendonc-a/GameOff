@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 
 public class EnemyClass : MonoBehaviour
 {
+    public bool isBoss = false;
     public bool dead = false;
     public float HP = 100.0f;
     public float MOV_SPEED = 1.0f;
@@ -22,6 +24,8 @@ public class EnemyClass : MonoBehaviour
 
     public float atack_velocity = 10;
     public int COIN_DROP = 0;
+
+    public Action OnDie;
     
     // Move flag
     // -1 -> Inimigo está inativo
@@ -179,8 +183,8 @@ public class EnemyClass : MonoBehaviour
             
         // TO DO : change direction
         Vector2 rando = new Vector2();
-        rando.x = Random.Range(-10, 10);
-        rando.y = Random.Range(-10, 10);
+        rando.x = UnityEngine.Random.Range(-10, 10);
+        rando.y = UnityEngine.Random.Range(-10, 10);
         
         ataque.GetComponent<AttackClass>().Create(DMG_DEAL_MULTIPLIER,1000,rando,10);
         state = MOVE_FLAG.MOVE;
@@ -203,9 +207,11 @@ public class EnemyClass : MonoBehaviour
         }
         for (int i = 0; i < numberToDrop; i++)
         {
-            Vector3 randomPos = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.5f, 0.5f), 0);
             GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
         }
+
+        OnDie.Invoke();
         Destroy(gameObject);
     }
 }

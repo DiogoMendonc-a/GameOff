@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//DEPRECATED - DO NOT USE
 public class Boss : EnemyClass {
 	[HideInInspector]
 	public GameObject nextLevelEntrance;
@@ -7,7 +8,7 @@ public class Boss : EnemyClass {
 	protected override void DoDieBehaviour()
 	{
 		base.DoDieBehaviour();
-		nextLevelEntrance.SetActive(true);
+		//nextLevelEntrance.SetActive(true);
 	}
 
 }
