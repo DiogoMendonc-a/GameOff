@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8449302436622594303}
     m_Modifications:
+    - target: {fileID: 4785973078502353728, guid: dca61c7edc915864db30685cf1de0668, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4785973078502353755, guid: dca61c7edc915864db30685cf1de0668, type: 3}
       propertyPath: m_Name
       value: StoneThrower
@@ -86,6 +90,10 @@ PrefabInstance:
     - target: {fileID: 4785973078502353758, guid: dca61c7edc915864db30685cf1de0668, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995797896176442103, guid: dca61c7edc915864db30685cf1de0668, type: 3}
+      propertyPath: isBoss
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dca61c7edc915864db30685cf1de0668, type: 3}

@@ -26,7 +26,7 @@ public class EnemyClass : MonoBehaviour
     public int COIN_DROP = 0;
 
     public Action OnDie;
-    
+
     // Move flag
     // -1 -> Inimigo está inativo
     // 0 -> Inimigo é estático
@@ -211,7 +211,7 @@ public class EnemyClass : MonoBehaviour
             GameObject.Instantiate(ResourcesManager.instance.moneyObj, this.transform.position + randomPos, Quaternion.identity);
         }
 
-        OnDie.Invoke();
+        if(OnDie != null) OnDie.Invoke();
         Destroy(gameObject);
     }
 }
