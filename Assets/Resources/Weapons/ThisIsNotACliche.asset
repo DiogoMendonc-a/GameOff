@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab9449efbab49cf9557ffcaaed9d19a, type: 3}
   m_Name: ThisIsNotACliche
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: This Is Not a Cliche
+  description: This weapon is not based on a cliche. It is also impossible to spawn.
+    How are you even reading this?
   basePrice: 50
   sprite: {fileID: 21300000, guid: 3a72de96f07735a47b10774bf22e5f5c, type: 3}
   displaySprite: {fileID: 21300000, guid: 3a72de96f07735a47b10774bf22e5f5c, type: 3}

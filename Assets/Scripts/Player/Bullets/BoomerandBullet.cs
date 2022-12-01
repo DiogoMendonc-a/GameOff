@@ -9,7 +9,10 @@ public class BoomerandBullet : BulletClass
         EnemyClass enemie = other.GetComponent<EnemyClass>();
         if (enemie != null)
         {
-            enemie.DealDamage(Mathf.CeilToInt(DMG_DEAL_MULTIPLIER));
+			if(returning)
+            	enemie.DealDamage(Mathf.CeilToInt(returnDamageModifier * DMG_DEAL_MULTIPLIER));
+            else
+				enemie.DealDamage(Mathf.CeilToInt(DMG_DEAL_MULTIPLIER));
         }
 
         PlayerClass player = other.GetComponent<PlayerClass>();

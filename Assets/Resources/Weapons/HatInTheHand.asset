@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab9449efbab49cf9557ffcaaed9d19a, type: 3}
   m_Name: HatInTheHand
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Hat in the Hand
+  description: Politely cause violence with your hat. It returns to you, dealing
+    double damage.
   basePrice: 300
   sprite: {fileID: 21300000, guid: 809405951b0d5c043b098e7a8da2ed99, type: 3}
   displaySprite: {fileID: 21300000, guid: 0b0c58c97cfb65b439e9e15d9149948c, type: 3}
