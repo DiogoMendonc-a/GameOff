@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2557235585850840167}
   - component: {fileID: 2557235585850840186}
   - component: {fileID: 2557235585850840187}
-  - component: {fileID: 2557235585850840164}
+  - component: {fileID: 7196088307326763372}
   m_Layer: 9
   m_Name: BadEgg
   m_TagString: Untagged
@@ -155,7 +155,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2557235585850840164
+--- !u!114 &7196088307326763372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,13 +164,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2557235585850840160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7bcfdc39a7f0d49bec0c3d5246c7c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 45101b91d83977c41a302f4891c1cf29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
   HP: 100
-  MOV_SPEED: 0.1
-  DMG_DEAL_MULTIPLIER: 10
+  MOV_SPEED: 1
+  DMG_DEAL_MULTIPLIER: 1
   DMG_RECEIVE_MULTIPLIER: 1
   animator: {fileID: 0}
   sr: {fileID: 2557235585850840166}
@@ -180,11 +180,11 @@ MonoBehaviour:
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}
   atack_velocity: 10
-  COIN_DROP: 7
+  COIN_DROP: 0
   state: 0
   TIMER_ATACK: 1
   MAX_TIMER_ATACK: 1
   t_move: 3
-  suicide_dmg: 1000
+  touch_dmg: 10
   movement_time: 1
-  t_atack: 10
+  t_atack: 1
