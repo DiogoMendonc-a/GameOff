@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2557235585850840160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.47, y: -2.54, z: 0.10216963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,14 +168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
-  HP: 100
-  MOV_SPEED: 1
-  DMG_DEAL_MULTIPLIER: 1
+  HP: 200
+  MOV_SPEED: 2
+  DMG_DEAL_MULTIPLIER: 20
   DMG_RECEIVE_MULTIPLIER: 1
   animator: {fileID: 0}
   sr: {fileID: 2557235585850840166}
   rb: {fileID: 0}
-  ataque_obj: {fileID: 4958017358235346204, guid: 0c6a3bf596e646b489cb960d4e267b1f, type: 3}
+  ataque_obj: {fileID: 4958017358235346204, guid: bacbc6b7d0719704abce0da97d0b6483, type: 3}
   atack_frame_counter: 0
   FRAMES_BETWEEN_ATACK: 1000
   direction: {x: 0, y: 0}
