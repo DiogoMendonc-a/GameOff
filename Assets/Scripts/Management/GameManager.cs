@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 		if(scene.name == "GameScene") {
 			generator.GenerateLevel(dungeon, currentLevel);
+			//Start music here
 		}
 	}
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
 	public void ReturnToMenu() {
 		if(currentLevel > -1) generator.DegenerateLevel(dungeon.GetLevel(currentLevel));
+		//Start music here
 		SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 	}
 

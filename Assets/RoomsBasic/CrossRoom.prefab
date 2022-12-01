@@ -946,7 +946,6 @@ MonoBehaviour:
   layouts_level1:
   - {fileID: 4353945219144900890, guid: a779c83924f346a47b6bbb3b316b106a, type: 3}
   - {fileID: 8817471737893626698, guid: d891919572ea32b47a798218e87d9084, type: 3}
-  - {fileID: 8817471737893626698, guid: e39819489708ed146a36210146405a2b, type: 3}
   layouts_level2:
   - {fileID: 8817471737893626698, guid: e39819489708ed146a36210146405a2b, type: 3}
   - {fileID: 8817471737893626698, guid: d891919572ea32b47a798218e87d9084, type: 3}
@@ -955,8 +954,8 @@ MonoBehaviour:
   layouts_level3:
   - {fileID: 7222056267630623531, guid: 203b1b5cc11002442b5eb381e17839f3, type: 3}
   - {fileID: 3898329929641017241, guid: 729eb15c178932f4cb40e25095f76828, type: 3}
-  displacement: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  displacement: {x: 2.2500105, y: -15.750064, z: 0}
+  rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
   enemies: []
 --- !u!61 &1979141368797399855
 BoxCollider2D:

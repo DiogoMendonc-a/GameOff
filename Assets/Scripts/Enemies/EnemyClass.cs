@@ -43,6 +43,8 @@ public class EnemyClass : MonoBehaviour
         TAKE_DMG
     }
 
+
+    bool music_playing;
     public MOVE_FLAG state = MOVE_FLAG.INACTIVE;
 
 
@@ -155,6 +157,12 @@ public class EnemyClass : MonoBehaviour
         {
             sr.flipX = false;
         }
+
+        if(!music_playing && isBoss && state != MOVE_FLAG.INACTIVE) {
+            //Start Music Here
+            music_playing = true;
+        }
+
     }
 
     protected virtual void DoInactiveBehaviour() {
