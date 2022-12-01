@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour{
+
+	public static int levelGenerating;
 	public int numberOfLevels;
 
 	public float entranceDeadzone = 0.001f;
@@ -74,6 +76,7 @@ public class DungeonGenerator : MonoBehaviour{
 	} 
 
 	public Level GenerateLevel(Dungeon dungeon, int levelId) {
+		levelGenerating = levelId;
 		Level level = dungeon.GetLevel(levelId);
 		System.Random rng = new System.Random(level.levelSeed);
 

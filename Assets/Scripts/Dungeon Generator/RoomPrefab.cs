@@ -4,7 +4,9 @@ public class RoomPrefab : MonoBehaviour {
 	public BoundingBox[] boundingBoxes;
 	public GameObject[] entrances;
 
-	public GameObject[] layouts;
+	public GameObject[] layouts_level1;
+	public GameObject[] layouts_level2;
+	public GameObject[] layouts_level3;
 
 	public Vector3 displacement;
 	public Quaternion rotation;
@@ -41,6 +43,18 @@ public class RoomPrefab : MonoBehaviour {
 		System.Random rng = new System.Random(seed);
 		enemies = new List<EnemyClass>();
 
+		GameObject[] layouts;
+
+		if(DungeonGenerator.levelGenerating == 1) {
+			layouts = layouts_level2;
+		}
+		else if(DungeonGenerator.levelGenerating == 2) {
+			layouts = layouts_level3;
+		}
+		else {
+			layouts = layouts_level1;
+		}
+		
 		if(layouts.Length == 0) return;
 
 		GameObject layout = layouts[rng.Next()%layouts.Length];
