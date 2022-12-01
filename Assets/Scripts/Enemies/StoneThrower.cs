@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneThrower : EnemyClass
+public class StoneThrower : Boss
 {
 
     public float collisionDMG;

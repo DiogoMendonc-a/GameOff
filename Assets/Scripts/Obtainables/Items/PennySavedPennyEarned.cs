@@ -5,6 +5,6 @@ public class PennySavedPennyEarned : Item
 {
     public override void OnGetMoney(int amount)
     {
-        PlayerClass.instance.inventory.AddMoney(amount);
+        PlayerClass.instance.inventory.AddMoney(amount, true);
     }
 }

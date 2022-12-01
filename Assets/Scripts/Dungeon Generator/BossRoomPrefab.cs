@@ -8,5 +8,13 @@ public class BossRoomPrefab : RoomPrefab {
 	{
 		base.Init(seed);
 		boss.nextLevelEntrance = nextLevelDoor;
+
+		enemies.Add(boss);
+
+		boss.transform.SetParent(GameManager.instance.transform);
+		boss.transform.rotation = Quaternion.identity;			
+
+		nextLevelDoor.transform.SetParent(GameManager.instance.transform);
+		nextLevelDoor.transform.rotation = Quaternion.identity;			
 	}
 }

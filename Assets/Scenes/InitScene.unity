@@ -180,12 +180,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
       propertyPath: onceRoomChance
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
       propertyPath: prefabs.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: requiredRoomsPerLevel.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: requiredRoomsPerLevel.Array.data[2]
+      value: 
+      objectReference: {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
+    - target: {fileID: 2084610305466235155, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
+      propertyPath: requiredRoomsPerLevel.Array.data[3]
+      value: 
+      objectReference: {fileID: 7467480202973189232, guid: 14000b46614082f4a9447866f8fff262, type: 3}
     - target: {fileID: 2084610305466235164, guid: 92015f8ab8bed0342927cf474355e79a, type: 3}
       propertyPath: m_RootOrder
       value: 0
