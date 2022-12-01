@@ -13,6 +13,15 @@ public class BatBehaviour : EnemyClass
 
     bool inited = false;
 
+    public override void DealDamage(int value) {
+        float modifier = 1.0f;
+        if(PlayerClass.instance.inventory.HasItem<SilverBullet>()) {
+            modifier *= SilverBullet.multiplier;
+        }
+        HP -= value * modifier;
+        OnReceiveDamage(value);
+    }
+
     protected override void UpdateState() {
         if(HP <= 0) {
 			state = MOVE_FLAG.DIE;
