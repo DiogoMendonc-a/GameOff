@@ -95,6 +95,9 @@ public class LetsSplitBehaviour : EnemyClass
         GameObject y = GameObject.Instantiate(child, this.transform.position, Quaternion.identity);
 		x.GetComponent<LetsSplitBehaviour>().Activate();
 		y.GetComponent<LetsSplitBehaviour>().Activate();
+
+		x.transform.SetParent(GameManager.instance.transform);
+		y.transform.SetParent(GameManager.instance.transform);
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {
